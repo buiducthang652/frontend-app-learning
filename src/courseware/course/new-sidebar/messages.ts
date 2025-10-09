@@ -3,33 +3,33 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   discussionsTitle: {
     id: 'discussions.sidebar.title',
-    defaultMessage: 'Discussions',
-    description: 'Title text for a forum where users are able to discuss course topics',
+    defaultMessage: 'Thảo luận',
+    description: 'Tiêu đề cho diễn đàn nơi người học có thể thảo luận về các chủ đề trong khóa học',
   },
   discussionNotificationTray: {
     id: 'discussions.notification.tray.container',
-    defaultMessage: 'Discussion and Notification tray',
-    description: 'Discussion and Notification tray container',
+    defaultMessage: 'Khu vực thảo luận và thông báo',
+    description: 'Vùng chứa cho phần thảo luận và thông báo',
   },
   notificationTitle: {
     id: 'notification.tray.title',
-    defaultMessage: 'Notifications',
-    description: 'Title text displayed for the notification tray',
+    defaultMessage: 'Thông báo',
+    description: 'Tiêu đề hiển thị cho khay thông báo',
   },
   closeTrigger: {
     id: 'tray.close.button',
-    defaultMessage: 'Close tray',
-    description: 'Button for the learner to close the sidebar',
+    defaultMessage: 'Đóng khay',
+    description: 'Nút để người học đóng thanh bên',
   },
   openSidebarTrigger: {
     id: 'sidebar.open.button',
-    defaultMessage: 'Show sidebar tray',
-    description: 'Button to open the sidebar tray and shows notifications and didcussions',
+    defaultMessage: 'Hiển thị thanh bên',
+    description: 'Nút mở thanh bên để xem thông báo và thảo luận',
   },
   responsiveCloseSidebarTray: {
     id: 'responsive.close.sidebar',
-    defaultMessage: 'Back to course',
-    description: 'Responsive button to go back to course and close the sidebar tray',
+    defaultMessage: 'Quay lại khóa học',
+    description: 'Nút phản hồi để quay lại khóa học và đóng thanh bên',
   },
 });
 

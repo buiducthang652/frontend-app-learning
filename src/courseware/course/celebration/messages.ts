@@ -3,48 +3,48 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   completed: {
     id: 'learning.celebration.completed',
-    defaultMessage: 'You just completed the first section of your course.',
-    description: 'Shown only once to leaner when they complete their first section',
+    defaultMessage: 'Bạn vừa hoàn thành phần đầu tiên của khóa học.',
+    description: 'Hiển thị một lần khi người học hoàn thành phần đầu tiên của khóa học',
   },
   congrats: {
     id: 'learning.celebration.congrats',
-    defaultMessage: 'Congratulations!',
-    description: 'Greeting for learners when they complete their weekly goal or finish the first section',
+    defaultMessage: 'Chúc mừng bạn!',
+    description: 'Lời chúc mừng khi người học hoàn thành mục tiêu hàng tuần hoặc phần đầu tiên',
   },
   earned: {
     id: 'learning.celebration.earned',
-    defaultMessage: 'You earned it!',
-    description: 'Shown below congrats messaging when leaner complete a goal',
+    defaultMessage: 'Bạn xứng đáng với điều đó!',
+    description: 'Hiển thị bên dưới lời chúc mừng khi người học hoàn thành mục tiêu',
   },
   emailSubject: {
     id: 'learning.celebration.emailSubject',
-    defaultMessage: "I'm on my way to completing {title} online with {platform}!",
-    description: 'Subject when sharing course progress via email',
+    defaultMessage: 'Tôi đang trên hành trình hoàn thành {title} trực tuyến cùng {platform}!',
+    description: 'Tiêu đề email khi chia sẻ tiến độ học tập',
   },
   forward: {
     id: 'learning.celebration.forward',
-    defaultMessage: 'Keep going',
-    description: 'Button to close celebration dialog and get back to course',
+    defaultMessage: 'Tiếp tục học',
+    description: 'Nút đóng hộp thoại chúc mừng và quay lại khóa học',
   },
   goalMet: {
     id: 'learning.celebration.goalMet',
-    defaultMessage: 'You met your goal!',
-    description: 'Headline for (weekly gaol celebration) section in courseware',
+    defaultMessage: 'Bạn đã đạt được mục tiêu của mình!',
+    description: 'Tiêu đề khi người học hoàn thành mục tiêu hàng tuần trong khóa học',
   },
   keepItUp: {
     id: 'learning.celebration.keepItUp',
-    defaultMessage: 'Keep it up',
-    description: 'Button to close celebration dialog and get back to course',
+    defaultMessage: 'Hãy duy trì phong độ nhé!',
+    description: 'Nút đóng hộp thoại chúc mừng và quay lại khóa học',
   },
   share: {
     id: 'learning.celebration.share',
-    defaultMessage: 'Take a moment to celebrate and share your progress.',
-    description: 'Text that precedes the (sharing icon) for goal accomplishment ',
+    defaultMessage: 'Hãy dành chút thời gian để ăn mừng và chia sẻ tiến độ học tập của bạn.',
+    description: 'Văn bản hiển thị trước biểu tượng chia sẻ khi đạt mục tiêu',
   },
   socialMessage: {
     id: 'learning.celebration.social',
-    defaultMessage: 'I’m on my way to completing {title} online with {platform}. What are you spending your time learning?',
-    description: 'Shown when sharing course progress on a social network',
+    defaultMessage: 'Tôi đang trên hành trình hoàn thành {title} trực tuyến cùng {platform}. Còn bạn, bạn đang học gì hôm nay?',
+    description: 'Thông điệp khi chia sẻ tiến độ học tập lên mạng xã hội',
   },
 });
 

@@ -3,28 +3,28 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   loading: {
     id: 'courseOutline.loading',
-    defaultMessage: 'Loading...',
-    description: 'Screen reader text to use on the spinner while the sidebar is loading.',
+    defaultMessage: 'Đang tải...',
+    description: 'Văn bản dành cho trình đọc màn hình sử dụng trên biểu tượng xoay khi thanh bên đang tải.',
   },
   toggleCourseOutlineTrigger: {
     id: 'courseOutline.toggle.button',
-    defaultMessage: 'Toggle course outline tray',
-    description: 'Button for the learner to toggle the sidebar',
+    defaultMessage: 'Chuyển đổi khay đề cương khóa học',
+    description: 'Nút để người học chuyển đổi thanh bên.',
   },
   courseOutlineTitle: {
     id: 'courseOutline.tray.title',
-    defaultMessage: 'Course outline',
-    description: 'Title text displayed for the course outline tray',
+    defaultMessage: 'Đề cương khóa học',
+    description: 'Văn bản tiêu đề hiển thị cho khay đề cương khóa học.',
   },
   completedUnit: {
     id: 'courseOutline.completedUnit',
-    defaultMessage: 'Completed unit',
-    description: 'Text used to describe the green checkmark icon in front of a unit title',
+    defaultMessage: 'Đơn vị đã hoàn thành',
+    description: 'Văn bản được sử dụng để mô tả biểu tượng dấu kiểm màu xanh lá cây trước tiêu đề của một đơn vị.',
   },
   incompleteUnit: {
     id: 'courseOutline.incompleteUnit',
-    defaultMessage: 'Incomplete unit',
-    description: 'Text used to describe the gray checkmark icon in front of a unit title',
+    defaultMessage: 'Đơn vị chưa hoàn thành',
+    description: 'Văn bản được sử dụng để mô tả biểu tượng dấu kiểm màu xám trước tiêu đề của một đơn vị.',
   },
 });
 

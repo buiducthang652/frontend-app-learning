@@ -3,8 +3,8 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   'learn.loading.error': {
     id: 'learn.loading.error',
-    defaultMessage: 'Error: {error}',
-    description: 'Message when learning sequence fails to load',
+    defaultMessage: 'Lỗi: {error}',
+    description: 'Thông báo khi không tải được nội dung học tập',
   },
 });
 

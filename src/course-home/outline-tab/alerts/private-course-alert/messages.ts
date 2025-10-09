@@ -3,9 +3,8 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   toAccess: {
     id: 'alert.enroll',
-    defaultMessage: ' to access the full course.',
-    description: 'Text instructing the learner to enroll in the course in order to see course content. The full string'
-      + 'would say "Enroll now to access the full course", where "Enroll now" is a button.',
+    defaultMessage: ' để truy cập toàn bộ khóa học.',
+    description: 'Văn bản hướng dẫn người học đăng ký khóa học để xem nội dung khóa học. Câu đầy đủ sẽ là "Đăng ký ngay để truy cập toàn bộ khóa học", trong đó "Đăng ký ngay" là một nút.',
   },
 });
 

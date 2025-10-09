@@ -3,38 +3,38 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   close: {
     id: 'general.altText.close',
-    defaultMessage: 'Close',
-    description: 'Text used as an aria-label to describe closing or dismissing a component',
+    defaultMessage: 'Đóng',
+    description: 'Văn bản được sử dụng làm aria-label để mô tả việc đóng hoặc hủy bỏ một thành phần',
   },
   registerLowercase: {
     id: 'learning.logistration.register', // ID left for historical purposes
-    defaultMessage: 'register',
-    description: 'Text in a link, prompting the user to create an account.  Used in "learning.logistration.alert"',
+    defaultMessage: 'đăng ký',
+    description: 'Văn bản trong một liên kết, nhắc nhở người dùng tạo tài khoản. Được sử dụng trong "learning.logistration.alert"',
   },
   signInLowercase: {
     id: 'learning.logistration.login', // ID left for historical purposes
-    defaultMessage: 'sign in',
-    description: 'Text in a link, prompting the user to log in.  Used in "learning.logistration.alert"',
+    defaultMessage: 'đăng nhập',
+    description: 'Văn bản trong một liên kết, nhắc nhở người dùng đăng nhập. Được sử dụng trong "learning.logistration.alert"',
   },
   signInSentenceCase: {
     id: 'general.signIn.sentenceCase',
-    defaultMessage: 'Sign in',
-    description: 'Text in a button, prompting the user to log in.',
+    defaultMessage: 'Đăng nhập',
+    description: 'Văn bản trong một nút, nhắc nhở người dùng đăng nhập.',
   },
   pageNotFoundHeader: {
     id: 'learning.pageNotFound.header',
-    defaultMessage: 'Page not found',
-    description: 'Text for header notifying them that the page is not found',
+    defaultMessage: 'Không tìm thấy trang',
+    description: 'Văn bản cho tiêu đề thông báo rằng không tìm thấy trang',
   },
   pageNotFoundBody: {
     id: 'learning.pageNotFound.body',
-    defaultMessage: 'The page you you were looking for was not found. Go back to the {homepageLink}.',
-    description: 'Text for body, prompting the user to go back to the home page',
+    defaultMessage: 'Trang bạn đang tìm kiếm không được tìm thấy. Quay lại {homepageLink}.',
+    description: 'Văn bản cho nội dung, nhắc nhở người dùng quay lại trang chủ',
   },
   homepageLink: {
     id: 'learning.pageNotFound.body.homepageLink.label',
-    defaultMessage: 'homepage',
-    description: 'Text for url, telling them the page they will be navigated to',
+    defaultMessage: 'trang chủ',
+    description: 'Văn bản cho URL, cho biết trang mà họ sẽ được điều hướng đến',
   },
 });
 

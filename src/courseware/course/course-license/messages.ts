@@ -3,49 +3,48 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   'learn.course.license.allRightsReserved.text': {
     id: 'learn.course.license.allRightsReserved.text',
-    defaultMessage: 'All Rights Reserved',
-    description: 'License text shown when using All Rights Reserved license type.',
+    defaultMessage: 'Bản quyền thuộc về tác giả',
+    description: 'Văn bản bản quyền hiển thị khi sử dụng loại giấy phép Bản quyền thuộc về tác giả.',
   },
   'learn.course.license.creativeCommons.terms.preamble': {
     id: 'learn.course.license.creativeCommons.terms.preamble',
-    defaultMessage: 'Creative Commons licensed content, with terms as follows:',
-    description: 'Screen reader only text preamble before reading specific Creative Commons license terms.',
+    defaultMessage: 'Nội dung được cấp phép Creative Commons, với các điều khoản như sau:',
+    description: 'Văn bản chỉ dành cho trình đọc màn hình trước khi đọc các điều khoản cụ thể của giấy phép Creative Commons.',
   },
   'learn.course.license.creativeCommons.terms.by': {
     id: 'learn.course.license.creativeCommons.terms.by',
-    defaultMessage: 'Attribution',
-    description: 'Creative Commons license text for Attribution term.',
+    defaultMessage: 'Ghi công',
+    description: 'Văn bản giấy phép Creative Commons cho điều khoản Ghi công.',
   },
   'learn.course.license.creativeCommons.terms.nc': {
     id: 'learn.course.license.creativeCommons.terms.nc',
-    defaultMessage: 'Noncommercial',
-    description: 'Creative Commons license text for Noncommercial term.',
+    defaultMessage: 'Phi thương mại',
+    description: 'Văn bản giấy phép Creative Commons cho điều khoản Phi thương mại.',
   },
   'learn.course.license.creativeCommons.terms.nd': {
     id: 'learn.course.license.creativeCommons.terms.nd',
-    defaultMessage: 'No Derivatives',
-    description: 'Creative Commons license text for No Derivatives term.',
+    defaultMessage: 'Không phái sinh',
+    description: 'Văn bản giấy phép Creative Commons cho điều khoản Không phái sinh.',
   },
   'learn.course.license.creativeCommons.terms.sa': {
     id: 'learn.course.license.creativeCommons.terms.sa',
-    defaultMessage: 'Share Alike',
-    description: 'Creative Commons license text for Share Alike term.',
+    defaultMessage: 'Chia sẻ tương tự',
+    description: 'Văn bản giấy phép Creative Commons cho điều khoản Chia sẻ tương tự.',
   },
-  // No text for `zero` license
   'learn.course.license.creativeCommons.terms.zero': {
     id: 'learn.course.license.creativeCommons.terms.zero',
-    defaultMessage: 'No terms',
-    description: 'Creative Commons license text for license with no terms.',
+    defaultMessage: 'Không có điều khoản',
+    description: 'Văn bản giấy phép Creative Commons cho giấy phép không có điều khoản.',
   },
   'learn.course.license.creativeCommons.text': {
     id: 'learn.course.license.creativeCommons.text',
-    defaultMessage: 'Some Rights Reserved',
-    description: 'License text shown when using all Creative Commons license types.',
+    defaultMessage: 'Một số quyền được bảo lưu',
+    description: 'Văn bản bản quyền hiển thị khi sử dụng tất cả các loại giấy phép Creative Commons.',
   },
   'learn.course.license.creativeCommons.externalSite.screenreaderOnly.message': {
     id: 'learn.course.license.creativeCommons.externalSite.screenreaderOnly.message',
-    defaultMessage: 'external site, in a new tab',
-    description: 'Screenreader only text for external site link',
+    defaultMessage: 'trang web bên ngoài, trong một tab mới',
+    description: 'Văn bản chỉ dành cho trình đọc màn hình cho liên kết trang web bên ngoài',
   },
 });
 

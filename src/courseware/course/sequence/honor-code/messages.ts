@@ -3,18 +3,18 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   'learn.honorCode.name': {
     id: 'learn.honorCode.name',
-    defaultMessage: 'Honor Code',
-    description: 'Honor code name.',
+    defaultMessage: 'Quy tắc danh dự',
+    description: 'Tên quy tắc danh dự.',
   },
   'learn.honorCode.cancel': {
     id: 'learn.honorCode.cancel',
-    defaultMessage: 'Cancel',
-    description: '"Cancel" button.',
+    defaultMessage: 'Hủy',
+    description: 'Nút "Hủy".',
   },
   'learn.honorCode.agree': {
     id: 'learn.honorCode.agree',
-    defaultMessage: 'I agree',
-    description: '"I agree" button.',
+    defaultMessage: 'Tôi đồng ý',
+    description: 'Nút "Tôi đồng ý".',
   },
 });
 

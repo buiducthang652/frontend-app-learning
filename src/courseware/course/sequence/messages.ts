@@ -3,33 +3,33 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   headerPlaceholder: {
     id: 'learn.header.h2.placeholder',
-    defaultMessage: 'Level 2 headings may be created by course providers in the future.',
-    description: 'Message spoken by a screenreader indicating that the h2 tag is a placeholder.',
+    defaultMessage: 'Các tiêu đề cấp 2 có thể được tạo bởi nhà cung cấp khóa học trong tương lai.',
+    description: 'Thông báo được đọc bởi trình đọc màn hình cho biết thẻ h2 là một trình giữ chỗ.',
   },
   loadFailure: {
     id: 'learn.course.load.failure',
-    defaultMessage: 'There was an error loading this course.',
-    description: 'Message when a course fails to load',
+    defaultMessage: 'Đã xảy ra lỗi khi tải khóa học này.',
+    description: 'Thông báo khi một khóa học không tải được',
   },
   loadingHonorCode: {
     id: 'learn.loading.honor.codk',
-    defaultMessage: 'Loading honor code messaging...',
-    description: 'Message shown when an interface about the honor code is being loaded',
+    defaultMessage: 'Đang tải thông điệp về quy tắc danh dự...',
+    description: 'Thông báo hiển thị khi giao diện về quy tắc danh dự đang được tải',
   },
   loadingLockedContent: {
     id: 'learn.loading.content.lock',
-    defaultMessage: 'Loading locked content messaging...',
-    description: 'Message shown when an interface about locked content is being loaded',
+    defaultMessage: 'Đang tải thông điệp về nội dung bị khóa...',
+    description: 'Thông báo hiển thị khi giao diện về nội dung bị khóa đang được tải',
   },
   loadingSequence: {
     id: 'learn.loading.learning.sequence',
-    defaultMessage: 'Loading learning sequence...',
-    description: 'Message when learning sequence is being loaded',
+    defaultMessage: 'Đang tải chuỗi học tập...',
+    description: 'Thông báo khi chuỗi học tập đang được tải',
   },
   noContent: {
     id: 'learn.sequence.no.content',
-    defaultMessage: 'There is no content here.',
-    description: 'Message shown when there is no content to show a user inside a learning sequence.',
+    defaultMessage: 'Không có nội dung nào ở đây.',
+    description: 'Thông báo hiển thị khi không có nội dung nào để hiển thị cho người dùng trong một chuỗi học tập.',
   },
 });
 
