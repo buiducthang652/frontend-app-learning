@@ -1,10 +1,5 @@
-/* eslint-disable react    const factoids = [
-    (<>Người dùng học {streakLength} ngày liên tiếp <b>{boldedSectionA}</b> so với những người không học.</>),
-    (<>Người dùng học {streakLength} ngày liên tiếp <b>{boldedSectionB}</b> so với những người không học.</>),
-  ];ười dùng học {streakLength} ngày liên tiếp <b>{boldedSectionB}</b> so với những người không học.</>),g học {streakLength} ngày liên tiếp <b>{boldedSectionA}</b> so với những người không học.</>),toids = [
-    (<>Người dùng học {streakLength} ngày liên tiếp <b>{boldedSectionA}</b> so với những người không học.</>),
-    (<>Người dùng học {streakLength} ngày liên tiếp <b>{boldedSectionB}</b> so với những người không học.</>),
-  ];port React, { useEffect, useState } from 'react';
+/* eslint-disable react/prop-types */
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { camelCaseObject, getConfig } from '@edx/frontend-platform';
 import { sendTrackEvent } from '@edx/frontend-platform/analytics';
