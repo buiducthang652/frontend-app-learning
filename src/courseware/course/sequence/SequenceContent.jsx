@@ -32,7 +32,7 @@ const SequenceContent = ({
       <Suspense
         fallback={(
           <PageLoading
-            srMessage={intl.formatMessage(messages.loadingLockedContent)}
+            srMessage="Đang tải nội dung bị khóa"
           />
         )}
       >
@@ -50,7 +50,7 @@ const SequenceContent = ({
   if (!unitId || !unit) {
     return (
       <div>
-        {intl.formatMessage(messages.noContent)}
+        Không có nội dung
       </div>
     );
   }

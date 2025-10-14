@@ -82,7 +82,7 @@ describe('UnitSuspense component', () => {
           const [component] = el.instance.findByType(GatedUnitContentMessageSlot);
           expect(component.parent.type).toEqual('Suspense');
           expect(component.parent.props.fallback)
-            .toEqual(<PageLoading srMessage={formatMessage(messages.loadingLockedContent)} />);
+            .toEqual(<PageLoading srMessage="Đang tải nội dung bị khóa" />);
           expect(component.props.courseId).toEqual(props.courseId);
         });
       });
@@ -99,7 +99,7 @@ describe('UnitSuspense component', () => {
         const [component] = el.instance.findByType(HonorCode);
         expect(component.parent.type).toEqual('Suspense');
         expect(component.parent.props.fallback)
-          .toEqual(<PageLoading srMessage={formatMessage(messages.loadingHonorCode)} />);
+          .toEqual(<PageLoading srMessage="Đang tải quy tắc danh dự" />);
         expect(component.props.courseId).toEqual(props.courseId);
       });
     });

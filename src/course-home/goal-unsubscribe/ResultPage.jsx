@@ -8,27 +8,26 @@ import { ReactComponent as UnsubscribeIcon } from './unsubscribe.svg';
 
 const ResultPage = ({ courseTitle, error }) => {
   const intl = useIntl();
-  const errorDescription = intl.formatMessage(
-    messages.errorDescription,
-    {
-      contactSupport: (
-        <Hyperlink
-          className="text-reset"
-          style={{ textDecoration: 'underline' }}
-          destination={`${getConfig().CONTACT_URL}`}
-        >
-          {intl.formatMessage(messages.contactSupport)}
-        </Hyperlink>
-      ),
-    },
+  const errorDescription = (
+    <>
+      Chúng tôi không thể hủy đăng ký email nhắc nhở mục tiêu cho bạn. Vui lòng thử lại sau hoặc{' '}
+      <Hyperlink
+        className="text-reset"
+        style={{ textDecoration: 'underline' }}
+        destination={`${getConfig().CONTACT_URL}`}
+      >
+        liên hệ hỗ trợ
+      </Hyperlink>
+      {' '}để được trợ giúp.
+    </>
   );
 
   const header = error
-    ? intl.formatMessage(messages.errorHeader)
-    : intl.formatMessage(messages.header);
+    ? 'Đã xảy ra lỗi'
+    : 'Bạn đã hủy đăng ký nhắc nhở mục tiêu';
   const description = error
     ? errorDescription
-    : intl.formatMessage(messages.description, { courseTitle });
+    : `Bạn sẽ không còn nhận được email nhắc nhở về mục tiêu của bạn cho ${courseTitle}.`;
 
   return (
     <>
@@ -38,7 +37,7 @@ const ResultPage = ({ courseTitle, error }) => {
         <div className="col-xl-7 col-12 p-0">{description}</div>
       </div>
       <Button variant="brand" href={`${getConfig().LMS_BASE_URL}/dashboard`} className="mt-4">
-        {intl.formatMessage(messages.goToDashboard)}
+        Đi đến bảng điều khiển
       </Button>
     </>
   );

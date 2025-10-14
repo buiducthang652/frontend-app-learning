@@ -123,18 +123,18 @@ const CoursewareSearch = ({ ...sectionProps }) => {
       <div className="courseware-search__outer-content">
         <div className="courseware-search__content" data-testid="courseware-search-content">
           <div className="courseware-search__form">
-            <h1 className="h2">{formatMessage(messages.searchModuleTitle)}</h1>
+            <h1 className="h2">Tìm kiếm khóa học này</h1>
             <CoursewareSearchForm
               searchTerm={searchKeyword}
               onSubmit={handleSubmit}
               onChange={handleOnChange}
-              placeholder={formatMessage(messages.searchBarPlaceholderText)}
+              placeholder="Tìm kiếm"
             />
             <div className="courseware-search__close">
               <Button
                 variant="tertiary"
                 className="p-1"
-                aria-label={formatMessage(messages.searchCloseAction)}
+                aria-label="Đóng biểu mẫu tìm kiếm"
                 onClick={() => dialogRef.current.close()}
                 data-testid="courseware-search-close-button"
               ><Icon src={Close} />
@@ -144,12 +144,12 @@ const CoursewareSearch = ({ ...sectionProps }) => {
           <div className="courseware-search__results" aria-live="polite" data-testid="courseware-search-results">
             {status === 'loading' ? (
               <div className="courseware-search__spinner" data-testid="courseware-search-spinner">
-                <Spinner animation="border" variant="light" screenReaderText={formatMessage(messages.loading)} />
+                <Spinner animation="border" variant="light" screenReaderText="Đang tìm kiếm..." />
               </div>
             ) : null}
             {status === 'error' && (
               <Alert className="mt-4" variant="danger" data-testid="courseware-search-error">
-                {formatMessage(messages.searchResultsError)}
+                Đã xảy ra lỗi trong quá trình tìm kiếm. Vui lòng thử lại sau vài phút. Nếu vấn đề vẫn tiếp tục, vui lòng liên hệ đội hỗ trợ.
               </Alert>
             )}
             {status === 'results' ? (
@@ -160,7 +160,7 @@ const CoursewareSearch = ({ ...sectionProps }) => {
                     aria-relevant="all"
                     aria-atomic="true"
                     data-testid="courseware-search-summary"
-                  >{formatMessage(messages.searchResultsLabel, { total, keyword: lastSearchKeyword })}
+                  >Kết quả cho "{lastSearchKeyword}":
                   </div>
                 ) : null}
                 <CoursewareSearchResultsFilterContainer />

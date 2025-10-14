@@ -15,7 +15,7 @@ const DiscussionsNotificationsSidebar = () => {
 
   return (
     <SidebarBase
-      ariaLabel={intl.formatMessage(messages.discussionNotificationTray)}
+      ariaLabel="Khay thảo luận và thông báo"
       sidebarId={ID}
       className="d-flex flex-column flex-fill overflow-auto"
       showTitleBar={false}

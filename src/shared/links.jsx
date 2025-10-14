@@ -14,7 +14,7 @@ const DashboardLink = () => {
       isInline
       destination={`${getConfig().LMS_BASE_URL}/dashboard`}
     >
-      {intl.formatMessage(messages.dashboardLink)}
+      Bảng điều khiển
     </Hyperlink>
   );
 };
@@ -30,7 +30,7 @@ const IdVerificationSupportLink = () => {
       isInline
       destination={getConfig().SUPPORT_URL_ID_VERIFICATION}
     >
-      {intl.formatMessage(messages.idVerificationSupportLink)}
+      Tìm hiểu thêm về xác minh danh tính
     </Hyperlink>
   );
 };
@@ -45,7 +45,7 @@ const ProfileLink = () => {
       isInline
       destination={`${getConfig().ACCOUNT_PROFILE_URL}/u/${username}`}
     >
-      {intl.formatMessage(messages.profileLink)}
+      Hồ sơ
     </Hyperlink>
   );
 };

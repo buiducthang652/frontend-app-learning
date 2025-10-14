@@ -14,7 +14,7 @@ const NotificationIcon = ({
   const intl = useIntl();
   return (
     <>
-      <Icon src={WatchOutline} className="m-0 m-auto" alt={intl.formatMessage(messages.openNotificationTrigger)} />
+      <Icon src={WatchOutline} className="m-0 m-auto" alt="Hiển thị khay thông báo" />
       {status === 'active'
         ? (
           <span

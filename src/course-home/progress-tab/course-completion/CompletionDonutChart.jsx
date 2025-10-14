@@ -38,7 +38,7 @@ const CompletionDonutChart = () => {
             {completePercentage}{isLocaleRtl && '\u200f'}%
           </text>
           <text x="50%" y="50%" className="donut-chart-label">
-            {intl.formatMessage(messages.donutLabel)}
+            hoàn thành
           </text>
         </g>
         <IncompleteDonutSegment incompletePercentage={incompletePercentage} />
@@ -46,11 +46,11 @@ const CompletionDonutChart = () => {
         <CompleteDonutSegment completePercentage={completePercentage} lockedPercentage={lockedPercentage} />
       </svg>
       <div className="sr-only">
-        {intl.formatMessage(messages.percentComplete, { percent: completePercentage })}
-        {intl.formatMessage(messages.percentIncomplete, { percent: incompletePercentage })}
+        {completePercentage}% hoàn thành
+        {incompletePercentage}% chưa hoàn thành
         {lockedPercentage > 0 && (
           <>
-            {intl.formatMessage(messages.percentLocked, { percent: lockedPercentage })}
+            {lockedPercentage}% bị khóa
           </>
         )}
       </div>

@@ -21,7 +21,7 @@ const SectionTitle: React.FC<Props> = ({ complete, hideFromTOC, title }) => {
             src={CheckCircle}
             className="float-left mt-1 text-success"
             aria-hidden="true"
-            svgAttrs={{ 'aria-label': intl.formatMessage(messages.completedSection) }}
+            svgAttrs={{ 'aria-label': 'Phần đã hoàn thành' }}
             size="sm"
           />
         ) : (
@@ -29,7 +29,7 @@ const SectionTitle: React.FC<Props> = ({ complete, hideFromTOC, title }) => {
             src={CheckCircleOutline}
             className="float-left mt-1 text-gray-400"
             aria-hidden="true"
-            svgAttrs={{ 'aria-label': intl.formatMessage(messages.incompleteSection) }}
+            svgAttrs={{ 'aria-label': 'Phần chưa hoàn thành' }}
             size="sm"
           />
         )}
@@ -37,7 +37,7 @@ const SectionTitle: React.FC<Props> = ({ complete, hideFromTOC, title }) => {
       <div className="col-7 ml-3 p-0 font-weight-bold text-dark-500">
         <span className="align-middle col-6">{title}</span>
         <span className="sr-only">
-          , {intl.formatMessage(complete ? messages.completedSection : messages.incompleteSection)}
+          , {complete ? 'Phần đã hoàn thành' : 'Phần chưa hoàn thành'}
         </span>
       </div>
       {hideFromTOC && (
@@ -46,7 +46,7 @@ const SectionTitle: React.FC<Props> = ({ complete, hideFromTOC, title }) => {
           <span className="small d-flex align-content-end">
             <Icon className="mr-2" src={DisabledVisible} data-testid="hide-from-toc-section-icon" />
             <span data-testid="hide-from-toc-section-text">
-              {intl.formatMessage(messages.hiddenSection)}
+              Phần này bị ẩn khỏi mục lục khóa học.
             </span>
           </span>
         )}

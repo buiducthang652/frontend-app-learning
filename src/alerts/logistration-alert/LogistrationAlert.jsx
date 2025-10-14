@@ -14,7 +14,7 @@ const LogistrationAlert = () => {
       style={{ textDecoration: 'underline' }}
       destination={`${getLoginRedirectUrl(global.location.href)}`}
     >
-      {intl.formatMessage(genericMessages.signInLowercase)}
+      đăng nhập
     </Hyperlink>
   );
 
@@ -25,21 +25,13 @@ const LogistrationAlert = () => {
       style={{ textDecoration: 'underline' }}
       destination={`${getConfig().LMS_BASE_URL}/register?next=${encodeURIComponent(global.location.href)}`}
     >
-      {intl.formatMessage(genericMessages.registerLowercase)}
+      đăng ký
     </Hyperlink>
   );
 
   return (
     <Alert variant="warning" icon={WarningFilled}>
-      <FormattedMessage
-        id="learning.logistration.alert"
-        description="Prompts the user to sign in or register to see course content."
-        defaultMessage="To see course content, {signIn} or {register}."
-        values={{
-          signIn,
-          register,
-        }}
-      />
+      Để xem nội dung khóa học, {signIn} hoặc {register}.
     </Alert>
   );
 };

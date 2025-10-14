@@ -27,12 +27,12 @@ const UnitSuspense = ({
   return (
     <>
       {shouldDisplayContentGating && (
-        <Suspense fallback={<PageLoading srMessage={formatMessage(messages.loadingLockedContent)} />}>
+        <Suspense fallback={<PageLoading srMessage="Đang tải nội dung bị khóa" />}>
           <GatedUnitContentMessageSlot courseId={courseId} />
         </Suspense>
       )}
       {shouldDisplayHonorCode && (
-        <Suspense fallback={<PageLoading srMessage={formatMessage(messages.loadingHonorCode)} />}>
+        <Suspense fallback={<PageLoading srMessage="Đang tải quy tắc danh dự" />}>
           <HonorCode courseId={courseId} />
         </Suspense>
       )}

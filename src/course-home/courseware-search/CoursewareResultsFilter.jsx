@@ -48,11 +48,21 @@ export const CoursewareSearchResultsFilter = () => {
   // Filter has no use if it has only 2 tabs (The "all" tab and another one with the same items).
   if (tabKeys.length < 3) { return <CoursewareSearchResults results={results[filterAll]} />; }
 
-  const filters = useMemo(() => tabKeys.map((key) => ({
-    key,
-    label: intl.formatMessage(messages[`filter:${key}`]),
-    count: results[key].length,
-  })), [results]);
+  const filters = useMemo(() => tabKeys.map((key) => {
+    const filterLabels = {
+      'all': 'Tất cả nội dung',
+      'text': 'Văn bản',
+      'video': 'Video',
+      'sequence': 'Phần',
+      'other': 'Khác'
+    };
+    
+    return {
+      key,
+      label: filterLabels[key] || 'Khác',
+      count: results[key].length,
+    };
+  }), [results]);
 
   const activeKey = validFilters.includes(filterKeyword) ? filterKeyword : filterAll;
 

@@ -69,7 +69,7 @@ const SocialIcons = ({
         url={`${socialUtmMarketingUrl}&utm_source=linkedin`}
       >
         <LinkedinIcon round size={32} />
-        <span className="sr-only">{intl.formatMessage(messages.shareService, { service: 'LinkedIn' })}</span>
+        <span className="sr-only">Chia sẻ tiến độ của bạn trên LinkedIn.</span>
       </LinkedinShareButton>
       {twitterAccount && (
         <TwitterShareButton
@@ -80,7 +80,7 @@ const SocialIcons = ({
           url={`${socialUtmMarketingUrl}&utm_source=twitter`}
         >
           <TwitterIcon round size={32} />
-          <span className="sr-only">{intl.formatMessage(messages.shareService, { service: 'Twitter' })}</span>
+          <span className="sr-only">Chia sẻ tiến độ của bạn trên Twitter.</span>
         </TwitterShareButton>
       )}
       <FacebookShareButton
@@ -90,17 +90,17 @@ const SocialIcons = ({
         url={`${socialUtmMarketingUrl}&utm_source=facebook`}
       >
         <FacebookIcon round size={32} />
-        <span className="sr-only">{intl.formatMessage(messages.shareService, { service: 'Facebook' })}</span>
+        <span className="sr-only">Chia sẻ tiến độ của bạn trên Facebook.</span>
       </FacebookShareButton>
       <EmailShareButton
         beforeOnClick={() => logClick('email')}
-        body={emailBody ? `${intl.formatMessage(emailBody)}\n\n` : ''}
+        body={emailBody ? `Bạn đang dành thời gian học gì?\n\n` : ''}
         className="ml-2"
         subject={emailSubject ? intl.formatMessage(emailSubject, { platform: getConfig().SITE_NAME, title }) : ''}
         url={`${marketingUrl}?${socialUtmCampaign}utm_medium=email&utm_source=email`}
       >
         <EmailIcon round size={32} />
-        <span className="sr-only">{intl.formatMessage(messages.shareEmail)}</span>
+        <span className="sr-only">Chia sẻ tiến độ của bạn qua email.</span>
       </EmailShareButton>
     </div>
   );

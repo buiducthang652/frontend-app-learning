@@ -52,7 +52,7 @@ const LaunchCourseHomeTourButton = ({ srOnly }) => {
               style={{ height: '18px', width: '18px' }}
             />
           )}
-          {intl.formatMessage(messages.launchTour)}
+          Khởi chạy chuyến tham quan
         </Button>
       )}
     </>

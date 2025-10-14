@@ -18,10 +18,7 @@ const SequenceDueDate: React.FC<Props> = ({
 }) => {
   const intl = useIntl();
   const courseId = useContextId();
-  let dueDateMessage: string | React.ReactNode = intl.formatMessage(
-    messages.sequenceNoDueDate,
-    { description: description || '' },
-  );
+  let dueDateMessage: string | React.ReactNode = `${description || ''} không có hạn chót`;
   const {
     userTimezone,
   } = useModel('outline', courseId);
@@ -29,22 +26,19 @@ const SequenceDueDate: React.FC<Props> = ({
   if (due) {
     const timezoneFormatArgs = userTimezone ? { timeZone: userTimezone } : {};
 
-    dueDateMessage = intl.formatMessage(
-      messages.sequenceDueDate,
-      {
-        assignmentDue: (
-          <FormattedTime
-            key={`${id}-due`}
-            day="numeric"
-            month="short"
-            year="numeric"
-            timeZoneName="short"
-            value={due}
-            {...timezoneFormatArgs}
-          />
-        ),
-        description: description || '',
-      },
+    dueDateMessage = (
+      <>
+        {description || ''} đến hạn{' '}
+        <FormattedTime
+          key={`${id}-due`}
+          day="numeric"
+          month="short"
+          year="numeric"
+          timeZoneName="short"
+          value={due}
+          {...timezoneFormatArgs}
+        />
+      </>
     );
   }
 

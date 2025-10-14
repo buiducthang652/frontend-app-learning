@@ -31,7 +31,7 @@ const CourseAccessErrorPage = () => {
       <>
         <HeaderSlot />
         <PageLoading
-          srMessage={intl.formatMessage(messages.loading)}
+          srMessage="Đang tải trang khóa học…"
         />
         <FooterSlot />
       </>

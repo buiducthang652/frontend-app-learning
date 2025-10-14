@@ -107,27 +107,27 @@ const GradeSummaryTable = ({ setAllOfSomeAssignmentTypeIsLocked }) => {
         itemCount={gradeSummaryData.length}
         columns={[
           {
-            Header: `${intl.formatMessage(messages.assignmentType)}`,
+            Header: 'Loại bài tập',
             accessor: 'type',
             Cell: ({ value }) => getAssignmentTypeCell(value),
             headerClassName: 'h5 mb-0',
           },
           {
-            Header: `${intl.formatMessage(messages.weight)}`,
+            Header: 'Trọng số',
             accessor: 'weight',
             headerClassName: 'justify-content-end h5 mb-0',
             Cell: ({ value }) => getCell(value.locked, value.weight),
             cellClassName: 'text-right small',
           },
           {
-            Header: `${intl.formatMessage(messages.grade)}`,
+            Header: 'Điểm',
             accessor: 'grade',
             headerClassName: 'justify-content-end h5 mb-0',
             Cell: ({ value }) => getCell(value.locked, value.grade),
             cellClassName: 'text-right small',
           },
           {
-            Header: `${intl.formatMessage(messages.weightedGrade)}`,
+            Header: 'Điểm có trọng số',
             accessor: 'weightedGrade',
             headerClassName: 'justify-content-end h5 mb-0 text-right',
             Cell: ({ value }) => getCell(value.locked, value.weightedGrade),

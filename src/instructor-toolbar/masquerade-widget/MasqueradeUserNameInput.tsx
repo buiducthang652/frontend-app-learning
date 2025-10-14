@@ -26,7 +26,7 @@ export const MasqueradeUserNameInput: React.FC<Props> = ({ onSubmit, onError, ..
         onError(error);
       }
     }).catch(() => {
-      const message = intl.formatMessage(messages.genericError);
+      const message = "Đã xảy ra lỗi; vui lòng thử lại.";
       onError(message);
     });
     return true;
@@ -42,7 +42,7 @@ export const MasqueradeUserNameInput: React.FC<Props> = ({ onSubmit, onError, ..
   return (
     <Input
       aria-labelledby="masquerade-search-label"
-      label={intl.formatMessage(messages.userNameLabel)}
+      label="Giả danh người dùng này"
       onKeyPress={handleKeyPress}
       type="text"
       {...otherProps}

@@ -37,8 +37,8 @@ const UpgradeToCompleteAlert = ({ logUpgradeLinkClick }) => {
     <Alert className="bg-light-200">
       <Row className="w-100 m-0">
         <Col xs={12} md={9} className="small p-0 pr-md-2">
-          <Alert.Heading>{intl.formatMessage(messages.upgradeToCompleteHeader)}</Alert.Heading>
-          {intl.formatMessage(messages.upgradeToCompleteBody)}
+          <Alert.Heading>Nâng cấp để hoàn thành khóa học</Alert.Heading>
+          Bạn đang truy cập phiên bản miễn phí của khóa học này, điều này có nghĩa là bạn có thể xem nội dung nhưng không thể truy cập một số bài tập đã được chấm điểm. Để truy cập bài tập đã được chấm điểm và hoàn thành khóa học này, hãy nâng cấp ngay.
         </Col>
         <Col xs={12} md={3} className="align-self-center text-right mt-3 mt-md-0 p-0">
           <Button
@@ -50,7 +50,7 @@ const UpgradeToCompleteAlert = ({ logUpgradeLinkClick }) => {
               global.location.replace(verifiedUpgradeLink);
             }}
           >
-            {intl.formatMessage(messages.upgradeToCompleteButton)}
+            Nâng cấp ngay
           </Button>
         </Col>
       </Row>

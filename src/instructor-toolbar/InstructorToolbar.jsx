@@ -78,17 +78,17 @@ const InstructorToolbar = (props) => {
           {((urlStudio && isStudioButtonVisible) || urlInsights) && (
             <>
               <hr className="border-light" />
-              <span className="mr-2 mt-1 col-form-label"><FormattedMessage {...messages.titleViewCourseIn} /></span>
+              <span className="mr-2 mt-1 col-form-label">Xem khóa học trong:</span>
             </>
           )}
           {urlStudio && isStudioButtonVisible && (
             <span className="mx-1 my-1">
-              <a className="btn btn-inverse-outline-primary" href={urlStudio}>{formatMessage(messages.titleStudio)}</a>
+              <a className="btn btn-inverse-outline-primary" href={urlStudio}>Studio</a>
             </span>
           )}
           {urlInsights && (
             <span className="mx-1 my-1">
-              <a className="btn btn-inverse-outline-primary" href={urlInsights}>{formatMessage(messages.titleInsights)}</a>
+              <a className="btn btn-inverse-outline-primary" href={urlInsights}>Thông tin chi tiết</a>
             </span>
           )}
         </div>

@@ -44,7 +44,7 @@ const DiscussionsTrigger = ({
   }
 
   return (
-    <SidebarTriggerBase onClick={onClick} ariaLabel={intl.formatMessage(messages.openDiscussionsTrigger)}>
+    <SidebarTriggerBase onClick={onClick} ariaLabel="Hiển thị khay thảo luận">
       <Icon src={QuestionAnswer} className="m-0 m-auto" />
     </SidebarTriggerBase>
   );

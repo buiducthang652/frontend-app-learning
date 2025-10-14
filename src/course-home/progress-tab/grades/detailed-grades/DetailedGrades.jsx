@@ -27,7 +27,7 @@ const DetailedGrades = () => {
 
   const hasSectionScores = sectionScores.length > 0;
   const emptyTableMsg = showUngradedAssignments()
-    ? messages.detailedGradesEmpty : messages.detailedGradesEmptyOnlyGraded;
+    ? 'Bạn chưa có điểm nào. Bài tập, bài quiz và bài kiểm tra sẽ được hiển thị ở đây sau khi bạn hoàn thành và gửi.' : 'Bạn chưa có điểm nào cho các bài tập được chấm điểm. Bài tập, bài quiz và bài kiểm tra được chấm điểm sẽ được hiển thị ở đây sau khi bạn hoàn thành và gửi.';
 
   const logOutlineLinkClick = () => {
     sendTrackEvent('edx.ui.lms.course_progress.detailed_grades.course_outline_link.clicked', {
@@ -48,38 +48,38 @@ const DetailedGrades = () => {
       onClick={logOutlineLinkClick}
       tabIndex={gradesFeatureIsFullyLocked ? '-1' : '0'}
     >
-      {intl.formatMessage(messages.courseOutline)}
+      đề cương khóa học
     </Hyperlink>
   );
 
   return (
     <section className="text-dark-700">
-      <h3 className="h4">{intl.formatMessage(messages.detailedGrades)}</h3>
+      <h3 className="h4">Điểm chi tiết</h3>
       <ul className="micro mb-3 pl-3 text-gray-700">
         <li>
-          <b>{intl.formatMessage(messages.practiceScoreLabel)} </b>
-          {intl.formatMessage(messages.practiceScoreInfoText)}
+          <b>Điểm thực hành: </b>
+          Không tính vào điểm cuối cùng (chỉ để luyện tập)
         </li>
         <li>
-          <b>{intl.formatMessage(messages.gradedScoreLabel)} </b>
-          {intl.formatMessage(messages.gradedScoreInfoText)}
+          <b>Điểm đã chấm: </b>
+          Tính vào điểm cuối cùng
         </li>
       </ul>
       {gradesFeatureIsPartiallyLocked && (
         <div className="mb-3 small ml-0 d-inline">
           <Icon className="mr-1 mt-1 d-inline-flex" style={{ height: '1rem', width: '1rem' }} src={Locked} data-testid="locked-icon" />
-          {intl.formatMessage(messages.gradeSummaryLimitedAccessExplanation, { upgradeLink: '' })}
+          Chỉ một số điểm mới hiển thị. Nâng cấp để xem tất cả.
         </div>
       )}
       {hasSectionScores && (
         <DetailedGradesTable />
       )}
       {!hasSectionScores && (
-        <p className="small">{intl.formatMessage(emptyTableMsg)}</p>
+        <p className="small">{emptyTableMsg}</p>
       )}
       {overviewTabUrl && !showUngradedAssignments() && (
         <p className="x-small m-0">
-          {intl.formatMessage(messages.ungradedAlert, { outlineLink })}
+          Bài tập và bài quiz không được chấm điểm có thể được tìm thấy trong {outlineLink}.
         </p>
       )}
     </section>

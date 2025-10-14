@@ -48,7 +48,7 @@ const DetailedGradesTable = () => {
                 cellClassName: 'mw-100',
               },
               {
-                Header: `${intl.formatMessage(messages.score)}`,
+                Header: 'Điểm số',
                 accessor: 'score',
                 headerClassName: 'justify-content-end h5 mb-0',
                 cellClassName: 'align-top text-right small',

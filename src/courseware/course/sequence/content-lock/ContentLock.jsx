@@ -24,14 +24,12 @@ const ContentLock = ({
         {' '}
         {sequenceTitle}
       </h3>
-      <h4>{intl.formatMessage(messages['learn.contentLock.content.locked'])}</h4>
+      <h4>Nội dung bị khóa</h4>
       <p>
-        {intl.formatMessage(messages['learn.contentLock.complete.prerequisite'], {
-          prereqSectionName,
-        })}
+        Bạn phải hoàn thành phần {prereqSectionName} trước khi có thể truy cập nội dung này.
       </p>
       <p>
-        <Button variant="primary" onClick={handleClick}>{intl.formatMessage(messages['learn.contentLock.goToSection'])}</Button>
+        <Button variant="primary" onClick={handleClick}>Đi đến phần yêu cầu</Button>
       </p>
     </>
   );

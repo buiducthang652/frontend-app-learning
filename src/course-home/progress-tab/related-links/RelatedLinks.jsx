@@ -32,22 +32,22 @@ const RelatedLinks = () => {
 
   return (
     <section className="mb-4 x-small">
-      <h3 className="h4">{intl.formatMessage(messages.relatedLinks)}</h3>
+      <h3 className="h4">Liên kết liên quan</h3>
       <ul className="pl-4">
         {datesTabUrl && (
         <li>
           <Hyperlink destination={datesTabUrl} onClick={() => logLinkClicked('dates')}>
-            {intl.formatMessage(messages.datesCardLink)}
+            Ngày tháng quan trọng
           </Hyperlink>
-          <p>{intl.formatMessage(messages.datesCardDescription)}</p>
+          <p>Xem lại ngày tháng quan trọng của khóa học, bao gồm hạn chót bài tập và ngày thi.</p>
         </li>
         )}
         {overviewTabUrl && (
         <li>
           <Hyperlink destination={overviewTabUrl} onClick={() => logLinkClicked('course_outline')}>
-            {intl.formatMessage(messages.outlineCardLink)}
+            Đề cương khóa học
           </Hyperlink>
-          <p>{intl.formatMessage(messages.outlineCardDescription)}</p>
+          <p>Xem tất cả nội dung khóa học, bao gồm bài đọc, video và bài tập.</p>
         </li>
         )}
       </ul>

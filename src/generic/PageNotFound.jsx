@@ -26,19 +26,10 @@ const PageNotFound = () => {
         }}
       >
         <h1 className="h3">
-          {formatMessage(messages.pageNotFoundHeader)}
+          Không tìm thấy trang
         </h1>
         <p>
-          {formatMessage(
-            messages.pageNotFoundBody,
-            {
-              homepageLink: (
-                <Hyperlink destination={getConfig().LMS_BASE_URL}>
-                  {formatMessage(messages.homepageLink)}
-                </Hyperlink>
-              ),
-            },
-          )}
+          Trang bạn đang tìm kiếm không được tìm thấy. Quay lại <Hyperlink destination={getConfig().LMS_BASE_URL}>trang chủ</Hyperlink>.
         </p>
       </main>
       <FooterSlot />

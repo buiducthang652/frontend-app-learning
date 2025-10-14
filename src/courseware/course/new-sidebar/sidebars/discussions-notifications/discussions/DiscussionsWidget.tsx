@@ -29,7 +29,7 @@ const DiscussionsWidget = () => {
         'vh-100': !shouldDisplayFullScreen,
         'min-height-700': shouldDisplayFullScreen,
       })}
-      title={intl.formatMessage(messages.discussionsTitle)}
+      title="Thảo luận"
       allow="clipboard-write"
       loading="lazy"
     />

@@ -40,7 +40,7 @@ const HonorCode = ({ courseId }) => {
     <Alert variant="light" aria-live="off">
       <h4 aria-level="3">
         {siteName}{' '}
-        {intl.formatMessage(messages['learn.honorCode.name'])}
+        Quy tắc danh dự
       </h4>
 
       <p>
@@ -58,10 +58,10 @@ const HonorCode = ({ courseId }) => {
       <ActionRow>
         <ActionRow.Spacer />
         <Button variant="tertiary" onClick={handleCancel}>
-          {intl.formatMessage(messages['learn.honorCode.cancel'])}
+          Hủy bỏ
         </Button>
         <Button variant="primary" onClick={handleAgree}>
-          {intl.formatMessage(messages['learn.honorCode.agree'])}
+          Tôi đồng ý
         </Button>
       </ActionRow>
     </Alert>

@@ -36,7 +36,7 @@ const ProgramCompletion = ({
       destination={url}
       className="text-reset"
     >
-      {intl.formatMessage(messages.dashboardLink)}
+      Bảng điều khiển
     </Hyperlink>
   );
 
@@ -44,14 +44,9 @@ const ProgramCompletion = ({
     <Alert variant="primary" className="my-3" data-testid="program-completion">
       <div className="d-flex">
         <div className="col order-1 order-md-0 pl-0 pr-0 pr-md-5">
-          <div className="h4">{intl.formatMessage(messages.programsLastCourseHeader, { title })}</div>
+          <div className="h4">Chúc mừng, bạn đã hoàn thành khóa học cuối cùng trong chương trình {title}!</div>
           <p>
-            <FormattedMessage
-              id="courseExit.programCompletion.dashboardMessage"
-              defaultMessage="To view your certificate status, check the Programs section of your {programLink}."
-              values={{ programLink }}
-              description="Text that precedes link to program page"
-            />
+            Để xem trạng thái chứng chỉ của bạn, hãy kiểm tra phần Chương trình trong {programLink} của bạn.
           </p>
           {type === 'microbachelors' && (
             <>
@@ -61,24 +56,24 @@ const ProgramCompletion = ({
                   destination={`${getConfig().SUPPORT_URL}/hc/en-us/articles/360004623154`}
                   className="text-reset"
                 >
-                  {intl.formatMessage(messages.microBachelorsLearnMore)}
+                  Tìm hiểu thêm về MicroBachelors
                 </Hyperlink>
               </p>
               <Button variant="primary" className="mb-2 mb-sm-0" href={`${getConfig().CREDENTIALS_BASE_URL}/records`}>
-                {intl.formatMessage(messages.applyForCredit)}
+                Nộp đơn xin tín chỉ
               </Button>
             </>
           )}
           {type === 'micromasters' && (
             <p>
-              {intl.formatMessage(messages.microMastersMessage)}
+              Chúc mừng! Chứng chỉ MicroMasters của bạn cho thấy bạn đã thành thạo một lĩnh vực cụ thể ở mức độ sau đại học.
               {' '}
               <Hyperlink
                 style={{ textDecoration: 'underline' }}
                 destination={`${getConfig().SUPPORT_URL}/hc/en-us/articles/360010346853-Does-a-Micromasters-certificate-count-towards-the-online-Master-s-degree-`}
                 className="text-reset"
               >
-                {intl.formatMessage(messages.microMastersLearnMore)}
+                Tìm hiểu thêm
               </Hyperlink>
             </p>
           )}
@@ -86,7 +81,7 @@ const ProgramCompletion = ({
         <div className="col-12 order-0 col-md-3 order-md-1 w-100 mb-3 p-0 text-center">
           <img
             src={certImage}
-            alt={`${intl.formatMessage(messages.certificateImage)}`}
+            alt="Hình ảnh chứng chỉ"
             className="w-100"
             style={{ maxWidth: '13rem' }}
             data-testid={type}

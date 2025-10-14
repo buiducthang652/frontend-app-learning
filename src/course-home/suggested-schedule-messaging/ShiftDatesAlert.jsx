@@ -40,8 +40,8 @@ const ShiftDatesAlert = ({ fetch, model }) => {
     <Alert variant="warning">
       <Row className="w-100 m-0">
         <Col xs={12} md={9} className="small p-0 pr-md-2">
-          <strong>{intl.formatMessage(messages.missedDeadlines)}</strong>
-          {' '}{intl.formatMessage(messages.shiftDatesBody)}
+          <strong>Bạn đã trễ hạn một số bài tập!</strong>
+          {' '}Dời lại ngày hạn chót để theo kịp lịch trình khóa học mới.
         </Col>
         <Col xs={12} md={3} className="align-self-center text-right mt-3 mt-md-0 p-0">
           <Button
@@ -50,7 +50,7 @@ const ShiftDatesAlert = ({ fetch, model }) => {
             className="w-xs-100 w-md-auto"
             onClick={() => dispatch(resetDeadlines(courseId, model, fetch))}
           >
-            {intl.formatMessage(messages.shiftDatesButton)}
+            Dời lại ngày
           </Button>
         </Col>
       </Row>

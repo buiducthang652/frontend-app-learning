@@ -29,9 +29,9 @@ const SidebarSection = ({ section, handleSelectSection }) => {
       <div className="col-10 ml-3 p-0 flex-grow-1 text-dark-500 text-left text-break">
         {title}
         <span className="sr-only">
-          , {intl.formatMessage(complete
-          ? courseOutlineMessages.completedSection
-          : courseOutlineMessages.incompleteSection)}
+          , {complete
+          ? "Phần đã hoàn thành"
+          : "Phần chưa hoàn thành"}
         </span>
       </div>
     </>

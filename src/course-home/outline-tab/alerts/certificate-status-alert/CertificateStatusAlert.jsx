@@ -61,32 +61,24 @@ const CertificateStatusAlert = ({ payload }) => {
       const timezoneFormatArgs = userTimezone ? { timeZone: userTimezone } : {};
       const certificateAvailableDateFormatted = <FormattedDate value={certificateAvailableDate} day="numeric" month="long" year="numeric" />;
       const courseEndDateFormatted = <FormattedDate value={courseEndDate} day="numeric" month="long" year="numeric" />;
-      alertProps.header = intl.formatMessage(certMessages.certStatusEarnedNotAvailableHeader);
+      alertProps.header = 'Chưa có chứng chỉ';
       alertProps.body = (
         <p>
-          <FormattedMessage
-            id="learning.outline.alert.cert.earnedNotAvailable"
-            defaultMessage="This course ends on {courseEndDateFormatted}. Final grades and any earned certificates are
-            scheduled to be available after {certificateAvailableDate}."
-            values={{
-              courseEndDateFormatted,
-              certificateAvailableDate: certificateAvailableDateFormatted,
-            }}
-            {...timezoneFormatArgs}
-          />
+          Khóa học này kết thúc vào ngày {courseEndDateFormatted}. Điểm số cuối cùng và chứng chỉ đạt được
+          được lên lịch có sẵn sau ngày {certificateAvailableDateFormatted}.
         </p>
       );
     } else if (certStatus === CERT_STATUS_TYPE.DOWNLOADABLE) {
-      alertProps.header = intl.formatMessage(certMessages.certStatusDownloadableHeader);
-      alertProps.buttonMessage = intl.formatMessage(certStatusMessages.viewableButton);
+      alertProps.header = 'Chứng chỉ có thể tải xuống';
+      alertProps.buttonMessage = 'Xem chứng chỉ';
       alertProps.buttonVisible = true;
       alertProps.buttonLink = certURL;
       alertProps.buttonAction = () => {
         sendAlertClickTracking('edx.ui.lms.course_outline.certificate_alert_downloadable_button.clicked');
       };
     } else if (certStatus === CERT_STATUS_TYPE.REQUESTING) {
-      alertProps.header = intl.formatMessage(certMessages.certStatusDownloadableHeader);
-      alertProps.buttonMessage = intl.formatMessage(certStatusMessages.requestableButton);
+      alertProps.header = 'Chứng chỉ có thể tải xuống';
+      alertProps.buttonMessage = 'Yêu cầu chứng chỉ';
       alertProps.buttonVisible = true;
       alertProps.buttonLink = '';
       alertProps.buttonAction = () => {
@@ -102,9 +94,9 @@ const CertificateStatusAlert = ({ payload }) => {
       variant: 'warning',
       icon: faExclamationTriangle,
       iconClassName: 'alert-icon text-warning-500',
-      header: intl.formatMessage(certStatusMessages.unverifiedHomeHeader),
-      buttonMessage: intl.formatMessage(certStatusMessages.unverifiedHomeButton),
-      body: intl.formatMessage(certStatusMessages.unverifiedHomeBody),
+      header: 'Xác minh danh tính của bạn',
+      buttonMessage: 'Xác minh danh tính của tôi',
+      body: 'Để nhận chứng chỉ, bạn phải xác minh danh tính của mình.',
       buttonVisible: true,
       buttonLink: getConfig().SUPPORT_URL_ID_VERIFICATION,
       buttonAction: () => {
@@ -120,9 +112,9 @@ const CertificateStatusAlert = ({ payload }) => {
     const progressLink = progressTab && progressTab.url;
 
     const alertProps = {
-      header: intl.formatMessage(certMessages.certStatusNotPassingHeader),
-      buttonMessage: intl.formatMessage(certMessages.certStatusNotPassingButton),
-      body: intl.formatMessage(certStatusMessages.notPassingBody),
+      header: 'Chưa đạt điểm tối thiểu',
+      buttonMessage: 'Xem điểm số',
+      body: 'Bạn chưa đạt điểm số tối thiểu cần thiết để nhận chứng chỉ khóa học này.',
       buttonVisible: true,
       buttonLink: progressLink,
       buttonAction: () => {

@@ -86,7 +86,7 @@ const DiscussionsNotificationsTrigger = ({ onClick }) => {
       src={sidebarIcon}
       iconAs={Icon}
       onClick={handleClick}
-      alt={intl.formatMessage(messages.openSidebarTrigger)}
+      alt="Mở thanh bên"
       className="icon-hover"
     />
   );

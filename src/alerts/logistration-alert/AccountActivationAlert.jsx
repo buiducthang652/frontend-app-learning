@@ -43,14 +43,7 @@ const AccountActivationAlert = () => {
       className=""
       onClick={() => setShowModal(false)}
     >
-      <FormattedMessage
-        id="account-activation.alert.button"
-        defaultMessage="Continue to {siteName}"
-        description="account activation alert continue button"
-        values={{
-          siteName: getConfig().SITE_NAME,
-        }}
-      />
+      Tiếp tục đến {getConfig().SITE_NAME}
       <Icon src={ArrowForward} className="ml-1 d-inline-block align-bottom" />
     </Button>
   );
@@ -68,11 +61,7 @@ const AccountActivationAlert = () => {
           sendEmailTag: (
           // eslint-disable-next-line jsx-a11y/anchor-is-valid
             <a href="#" role="button" onClick={handleOnClick}>
-              <FormattedMessage
-                id="account-activation.resend.link"
-                defaultMessage="resend the email"
-                description="Message for resend link in account activation alert which is shown after the registration"
-              />
+              gửi lại email
             </a>
           ),
         }}
@@ -115,7 +104,7 @@ const AccountActivationAlert = () => {
   return (
     <AlertModal
       isOpen={showModal}
-      title={intl.formatMessage(messages.accountActivationAlertTitle)}
+      title="Kích hoạt tài khoản của bạn"
       footerNode={button}
       onClose={() => ({})}
     >

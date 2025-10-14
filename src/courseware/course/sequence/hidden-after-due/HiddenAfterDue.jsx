@@ -19,24 +19,19 @@ const HiddenAfterDue = ({ courseId }) => {
       destination={progressTab.url}
       className="text-reset"
     >
-      {intl.formatMessage(messages.progressPage)}
+      Trang tiến độ
     </Hyperlink>
   );
 
   return (
     <Alert variant="info" icon={Info}>
-      <h3>{intl.formatMessage(messages.header)}</h3>
+      <h3>Nội dung không khả dụng</h3>
       <p>
-        {intl.formatMessage(messages.description)}
+        Nội dung này hiện không khả dụng vì đã quá hạn nộp bài.
         {progressLink && (
           <>
             <br />
-            <FormattedMessage
-              {...messages.gradeAvailable}
-              values={{
-                progressPage: progressLink,
-              }}
-            />
+            Điểm số của bạn có sẵn trên {progressLink}.
           </>
         )}
       </p>

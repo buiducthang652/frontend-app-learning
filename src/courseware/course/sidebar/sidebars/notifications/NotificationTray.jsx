@@ -65,8 +65,8 @@ const NotificationTray = () => {
 
   return (
     <SidebarBase
-      title={intl.formatMessage(messages.notificationTitle)}
-      ariaLabel={intl.formatMessage(messages.notificationTray)}
+      title="Thông báo"
+      ariaLabel="Khay thông báo"
       sidebarId={ID}
       width="45rem"
       className={classNames({
@@ -82,7 +82,7 @@ const NotificationTray = () => {
             setNotificationCurrentState={setUpgradeNotificationCurrentState}
           />
         ) : (
-          <p className="p-3 small">{intl.formatMessage(messages.noNotificationsMessage)}</p>
+          <p className="p-3 small">Hiện tại bạn không có thông báo mới nào.</p>
         )}
       </div>
     </SidebarBase>

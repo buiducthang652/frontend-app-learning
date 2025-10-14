@@ -39,8 +39,8 @@ const UpgradeToShiftDatesAlert = ({ logUpgradeLinkClick, model }) => {
     <Alert className="bg-light-200">
       <Row className="w-100 m-0">
         <Col xs={12} md={9} className="small p-0 pr-md-2">
-          <strong>{intl.formatMessage(messages.missedDeadlines)}</strong>
-          {' '}{intl.formatMessage(messages.upgradeToShiftBody)}
+          <strong>Bạn đã trễ hạn một số bài tập!</strong>
+          {' '}Để dời lại ngày hạn chót và truy cập tất cả nội dung khóa học, bạn cần nâng cấp tài khoản.
         </Col>
         <Col xs={12} md={3} className="align-self-center text-right mt-3 mt-md-0 p-0">
           <Button
@@ -52,7 +52,7 @@ const UpgradeToShiftDatesAlert = ({ logUpgradeLinkClick, model }) => {
               global.location.replace(verifiedUpgradeLink);
             }}
           >
-            {intl.formatMessage(messages.upgradeToShiftButton)}
+            Nâng cấp để dời lại ngày
           </Button>
         </Col>
       </Row>

@@ -36,7 +36,7 @@ const GradeRangeTooltip = ({ iconButtonClassName, passingGrade }) => {
       overlay={(
         <Popover>
           <Popover.Content className="px-3">
-            {intl.formatMessage(messages.courseGradeRangeTooltip)}
+            Khoảng điểm chữ:
             <ul className="list-unstyled m-0">
               {orderedGradeRange.map((range, index) => {
                 if (index === 0) {
@@ -62,7 +62,7 @@ const GradeRangeTooltip = ({ iconButtonClassName, passingGrade }) => {
       <IconButton
         onClick={() => setShowTooltip(!showTooltip)}
         onBlur={() => setShowTooltip(false)}
-        alt={intl.formatMessage(messages.gradeRangeTooltipAlt)}
+        alt="Xem khoảng điểm chữ"
         className={`mb-0 mt-n1 ${iconButtonClassName}`}
         src={InfoOutline}
         iconAs={Icon}

@@ -83,23 +83,23 @@ const LockPaywall = ({
       <div className="row">
         <div className="col">
           <h4 aria-level="3">
-            <span>{intl.formatMessage(messages['learn.lockPaywall.title'])}</span>
+            <span>Nâng cấp để mở khóa</span>
           </h4>
           {pastExpirationDeadline ? (
             <div className="mb-2 upgrade-intro">
-              {intl.formatMessage(messages['learn.lockPaywall.content.pastExpiration'])}
-              <Hyperlink destination={marketingUrl} onClick={logClickPastExpiration} target="_blank">{intl.formatMessage(messages['learn.lockPaywall.courseDetails'])}</Hyperlink>
+              Quyền truy cập vào nội dung này đã hết hạn.
+              <Hyperlink destination={marketingUrl} onClick={logClickPastExpiration} target="_blank">Chi tiết khóa học</Hyperlink>
             </div>
           ) : (
             <div className="mb-2 upgrade-intro">
-              {intl.formatMessage(messages['learn.lockPaywall.content'])}
+              Nâng cấp để nhận quyền truy cập đầy đủ vào khóa học này và nhận chứng chỉ được xác minh.
             </div>
           )}
 
           <div className={classNames('d-inline-flex flex-row', { 'flex-wrap': notificationTrayVisible || shouldDisplayBulletPointsBelowCertificate })}>
             <div style={{ float: 'left' }} className="mr-3 mb-2">
               <img
-                alt={intl.formatMessage(messages['learn.lockPaywall.example.alt'])}
+                alt="Ví dụ chứng chỉ được xác minh"
                 src={certificateLocked}
                 className="border-0 certificate-image-banner"
                 style={{ height: '128px', width: '175px' }}
@@ -108,7 +108,7 @@ const LockPaywall = ({
 
             <div className="mw-xs list-div">
               <div className="mb-2">
-                {intl.formatMessage(messages['learn.lockPaywall.list.intro'])}
+                Nâng cấp để nhận:
               </div>
               <ul className="fa-ul ml-4 pl-2">
                 <VerifiedCertBullet />

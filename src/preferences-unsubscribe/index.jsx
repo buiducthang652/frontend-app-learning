@@ -51,31 +51,18 @@ const PreferencesUnsubscribe = () => {
       <Container size="xs" className="h-75 mx-auto my-auto">
         <div className="d-flex flex-row h-100">
           <div className="mx-auto my-auto">
-            {status === LOADING && <PageLoading srMessage={`${intl.formatMessage(messages.unsubscribeLoading)}`} />}
+            {status === LOADING && <PageLoading srMessage="Đang tải" />}
             {status !== LOADING && (
               <>
                 <Icon src={pageContent.icon} className={`size-56px mx-auto ${pageContent.iconClass}`} />
                 <h3 className="font-weight-bold text-primary-500 text-center my-3" data-testid="heading-text">
-                  {intl.formatMessage(pageContent.headingText)}
+                  {status === FAILED ? "Lỗi khi hủy đăng ký tùy chọn" : "Hủy đăng ký thành công"}
                 </h3>
                 <div className="font-weight-normal text-gray-700 text-center">
-                  {intl.formatMessage(pageContent.bodyText)}
+                  {status === FAILED ? "URL không hợp lệ hoặc mã thông báo đã hết hạn" : "Bạn đã hủy đăng ký thành công khỏi các email tóm tắt hoạt động học tập"}
                 </div>
                 <small className="d-block font-weight-normal text-gray text-center mt-3">
-                  <FormattedMessage
-                    id="learning.notification.preferences.unsubscribe.preferenceCenterUrl"
-                    description="Shown as a suggestion or recommendation for learner when their unsubscribing request has failed"
-                    defaultMessage="Go to the {preferenceCenterUrl} to set your preferences"
-                    values={{
-                      preferenceCenterUrl: (
-                        <Hyperlink
-                          destination={`${getConfig().ACCOUNT_SETTINGS_URL}/#notifications`}
-                        >
-                          {intl.formatMessage(messages.preferenceCenterUrl)}
-                        </Hyperlink>
-                      ),
-                    }}
-                  />
+                  Đi đến <Hyperlink destination={`${getConfig().ACCOUNT_SETTINGS_URL}/#notifications`}>trang tùy chọn</Hyperlink> để thiết lập tùy chọn của bạn
                 </small>
               </>
             )}

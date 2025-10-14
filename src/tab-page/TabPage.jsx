@@ -55,7 +55,7 @@ const TabPage = (props) => {
               label: toastBodyText,
               href: toastBodyLink,
             } : null}
-            closeLabel={intl.formatMessage(genericMessages.close)}
+            closeLabel="Đóng"
             onClose={() => dispatch(setCallToActionToast({ header: '', link: null, link_text: null }))}
             show={!!(toastHeader)}
           >
@@ -68,7 +68,7 @@ const TabPage = (props) => {
       <HeaderSlot courseOrg={org} courseNumber={number} courseTitle={title} />
 
       {courseStatus === 'loading' && (
-        <PageLoading srMessage={intl.formatMessage(messages.loading)} />
+        <PageLoading srMessage="Đang tải trang khóa học…" />
       )}
 
       {['loaded', 'denied'].includes(courseStatus) && (
@@ -78,7 +78,7 @@ const TabPage = (props) => {
       {/* courseStatus 'failed' and any other unexpected course status. */}
       {(!['loading', 'loaded', 'denied'].includes(courseStatus)) && (
         <p className="text-center py-5 mx-auto" style={{ maxWidth: '30em' }}>
-          {intl.formatMessage(messages.failure)}
+          Đã xảy ra lỗi khi tải khóa học này.
         </p>
       )}
       <FooterSlot />

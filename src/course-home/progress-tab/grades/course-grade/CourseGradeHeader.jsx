@@ -42,10 +42,10 @@ const CourseGradeHeader = () => {
   let previewText;
   if (verifiedMode) {
     previewText = gradesFeatureIsFullyLocked
-      ? intl.formatMessage(messages.courseGradePreviewUnlockCertificateBody)
-      : intl.formatMessage(messages.courseGradePartialPreviewUnlockCertificateBody);
+      ? 'Nâng cấp tài khoản để mở khóa điểm số và nhận chứng chỉ đã xác minh.'
+      : 'Nâng cấp tài khoản để xem tất cả điểm số và nhận chứng chỉ đã xác minh.';
   } else {
-    previewText = intl.formatMessage(messages.courseGradePreviewUpgradeDeadlinePassedBody);
+    previewText = 'Hạn chót nâng cấp đã qua cho khóa học này.';
   }
   return (
     <div className="row w-100 m-0 p-4 rounded-top bg-primary-500 text-white">
@@ -56,11 +56,11 @@ const CourseGradeHeader = () => {
           </div>
           <div className="col-11 px-2 p-sm-0 h4 text-white">
             <span aria-hidden="true">
-              {intl.formatMessage(messages.courseGradePreviewHeaderAriaHidden)}
+              🔒
             </span>
             {gradesFeatureIsFullyLocked
-              ? intl.formatMessage(messages.courseGradePreviewHeaderLocked)
-              : intl.formatMessage(messages.courseGradePreviewHeaderLimited)}
+              ? 'Điểm số bị khóa'
+              : 'Xem trước điểm số có giới hạn'}
           </div>
         </div>
         <div className="row w-100 m-0 p-0 justify-content-end">
@@ -72,7 +72,7 @@ const CourseGradeHeader = () => {
       {verifiedMode && (
         <div className="col-12 col-md-3 mt-3 mt-md-0 p-0 align-self-center text-right">
           <Button variant="brand" size="sm" href={verifiedMode.upgradeUrl} onClick={logUpgradeButtonClick}>
-            {intl.formatMessage(messages.courseGradePreviewUpgradeButton)}
+            Nâng cấp ngay
           </Button>
         </div>
       )}

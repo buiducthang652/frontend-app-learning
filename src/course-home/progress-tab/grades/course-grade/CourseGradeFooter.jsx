@@ -26,7 +26,7 @@ const CourseGradeFooter = ({ passingGrade }) => {
   const wideScreen = useWindowSize().width >= breakpoints.medium.minWidth;
 
   const hasLetterGrades = Object.keys(gradeRange).length > 1; // A pass/fail course will only have one key
-  let footerText = intl.formatMessage(messages.courseGradeFooterNonPassing, { passingGrade });
+  let footerText = `Bạn cần đạt điểm tối thiểu ${passingGrade}% để đỗ khóa học này.`;
 
   if (isPassing) {
     if (hasLetterGrades) {
@@ -37,13 +37,9 @@ const CourseGradeFooter = ({ passingGrade }) => {
       const maxGradeRangeCutoff = possibleMaxGradeRangeValues.length ? Math.min(...possibleMaxGradeRangeValues) * 100
         : 100;
 
-      footerText = intl.formatMessage(messages.courseGradeFooterPassingWithGrade, {
-        letterGrade,
-        minGrade: minGradeRangeCutoff.toFixed(0),
-        maxGrade: maxGradeRangeCutoff.toFixed(0),
-      });
+      footerText = `Bạn đang đạt điểm ${letterGrade} (${minGradeRangeCutoff.toFixed(0)}% - ${maxGradeRangeCutoff.toFixed(0)}%) trong khóa học này.`;
     } else {
-      footerText = intl.formatMessage(messages.courseGradeFooterGenericPassing);
+      footerText = 'Bạn đã đỗ khóa học này.';
     }
   }
 

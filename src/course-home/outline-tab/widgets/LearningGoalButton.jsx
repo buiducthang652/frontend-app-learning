@@ -18,20 +18,20 @@ const LearningGoalButton = ({
   const buttonDetails = {
     casual: {
       daysPerWeek: 1,
-      title: messages.casualGoalButtonTitle,
-      text: messages.casualGoalButtonText,
+      title: 'Thoải mái',
+      text: '1 lần/tuần',
       icon: <FlagCasualIcon />,
     },
     regular: {
       daysPerWeek: 3,
-      title: messages.regularGoalButtonTitle,
-      text: messages.regularGoalButtonText,
+      title: 'Thường xuyên',
+      text: '3 lần/tuần',
       icon: <FlagRegularIcon />,
     },
     intense: {
       daysPerWeek: 5,
-      title: messages.intenseGoalButtonTitle,
-      text: messages.intenseGoalButtonText,
+      title: 'Tích cực',
+      text: '5 lần/tuần',
       icon: <FlagIntenseIcon />,
     },
   };
@@ -41,8 +41,8 @@ const LearningGoalButton = ({
   return (
     <FlagButton
       buttonIcon={values.icon}
-      title={intl.formatMessage(values.title)}
-      text={intl.formatMessage(values.text)}
+      title={values.title}
+      text={values.text}
       handleSelect={() => handleSelect(values.daysPerWeek)}
       isSelected={isSelected}
     />

@@ -21,7 +21,7 @@ const CourseTabsNavigation = ({
           <div className="nav-menu">
             <Tabs
               className="nav-underline-tabs"
-              aria-label={intl.formatMessage(messages.courseMaterial)}
+              aria-label="Tài liệu khóa học"
             >
               {tabs.map(({ url, title, slug }) => (
                 <a

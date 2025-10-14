@@ -7,7 +7,7 @@ const SuggestedScheduleHeader = () => {
   const intl = useIntl();
   return (
     <p className="large">
-      {intl.formatMessage(messages.suggestedSchedule)}
+      Lịch trình gợi ý
     </p>
   );
 };

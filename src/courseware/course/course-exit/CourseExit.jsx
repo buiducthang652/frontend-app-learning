@@ -69,7 +69,7 @@ const CourseExit = () => {
           variant="outline-primary"
           href={`${getConfig().LMS_BASE_URL}/dashboard`}
         >
-          {intl.formatMessage(messages.viewCoursesButton)}
+          Xem các khóa học
         </Button>
       </div>
       {body}

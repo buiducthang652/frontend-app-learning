@@ -73,7 +73,7 @@ const SidebarBase: React.FC<Props> = ({
         >
           <Icon src={ArrowBackIos} />
           <span className="font-weight-bold m-2 d-inline-block">
-            {intl.formatMessage(messages.responsiveCloseSidebarTray)}
+            Đóng
           </span>
         </div>
         )}
@@ -87,7 +87,7 @@ const SidebarBase: React.FC<Props> = ({
                 size="sm"
                 iconAs={Icon}
                 onClick={() => toggleSidebar(sidebarId)}
-                alt={intl.formatMessage(messages.closeTrigger)}
+                alt="Đóng thanh bên"
                 className="icon-hover"
               />
             </div>

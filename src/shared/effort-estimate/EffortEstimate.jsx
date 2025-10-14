@@ -18,25 +18,20 @@ const EffortEstimate = (props) => {
   } = props;
 
   const minuteCount = Math.ceil(effortTime / 60); // effortTime is in seconds
-  const minutesAbbreviated = intl.formatMessage(messages.minutesAbbreviated, { minuteCount });
-  const minutesFull = intl.formatMessage(messages.minutesFull, { minuteCount });
+  const minutesAbbreviated = `${minuteCount} phút`;
+  const minutesFull = `${minuteCount} phút`;
   const minutes = (
     <>
       <span aria-hidden="true">{minutesAbbreviated}</span>
       <span className="sr-only">{minutesFull}</span>
     </>
   );
-  const activities = intl.formatMessage(messages.activities, { activityCount: effortActivities });
+  const activities = `${effortActivities} hoạt động`;
   let content = null;
 
   if (effortTime && effortActivities) {
     content = (
-      <FormattedMessage
-        id="learning.effortEstimation.combinedEstimate"
-        defaultMessage="{minutes} + {activities}"
-        description="You can likely leave this alone, unless you want to use a full width plus or similar change"
-        values={{ activities, minutes }}
-      />
+      <>{minutes} + {activities}</>
     );
   } else if (effortTime) {
     content = minutes;

@@ -32,12 +32,12 @@ const ShareButton = ({ url }) => {
   return (
     <TwitterShareButton
       url={twitterUrl}
-      title={formatMessage(messages.shareQuote)}
+      title="Hãy xem khóa học tuyệt vời này!"
       resetButtonStyle={false}
       className="px-1 ml-n1 btn-sm text-primary-500 btn btn-link"
     >
       <Icon src={ShareTwitterIcon} />
-      {formatMessage(messages.shareButton)}
+      Chia sẻ
     </TwitterShareButton>
   );
 };

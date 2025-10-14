@@ -40,21 +40,21 @@ const Calculator = () => {
           <Collapsible.Visible whenClosed>
             <FontAwesomeIcon icon={faCalculator} aria-hidden="true" className="mr-2" />
           </Collapsible.Visible>
-          {intl.formatMessage(messages['calculator.button.label'])}
+          Máy tính
         </Collapsible.Trigger>
       </div>
       <Collapsible.Body className="calculator-content pt-4">
         <form onSubmit={handleSubmit} className="container-xl form-inline flex-nowrap">
           <input
             type="text"
-            placeholder={intl.formatMessage(messages['calculator.input.field.label'])}
-            aria-label={intl.formatMessage(messages['calculator.input.field.label'])}
+            placeholder="Nhập phương trình tính toán"
+            aria-label="Nhập phương trình tính toán"
             className="form-control w-100"
             onChange={(event) => changeEquation(event.target.value)}
           />
           <button
             className="btn btn-primary mx-3"
-            aria-label={intl.formatMessage(messages['calculator.submit.button.label'])}
+            aria-label="Tính toán"
             type="submit"
           >
             <FontAwesomeIcon icon={faEquals} aria-hidden="true" />
@@ -64,8 +64,8 @@ const Calculator = () => {
             tabIndex="-1"
             readOnly
             aria-live="polite"
-            placeholder={intl.formatMessage(messages['calculator.result.field.placeholder'])}
-            aria-label={intl.formatMessage(messages['calculator.result.field.label'])}
+            placeholder="Kết quả"
+            aria-label="Kết quả tính toán"
             className="form-control w-50"
             value={result}
           />
@@ -80,10 +80,7 @@ const Calculator = () => {
               <Collapsible.Visible whenClosed>
                 <FontAwesomeIcon icon={faQuestionCircle} aria-hidden="true" className="mr-2" />
               </Collapsible.Visible>
-              <FormattedMessage
-                id="calculator.instructions.button.label"
-                defaultMessage="Calculator Instructions"
-              />
+              Hướng dẫn sử dụng máy tính
             </Collapsible.Trigger>
           </div>
           <Collapsible.Body className="container-xl pt-3" style={{ maxHeight: '50vh', overflow: 'auto' }}>

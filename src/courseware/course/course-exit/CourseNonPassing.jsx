@@ -33,15 +33,15 @@ const CourseNonPassing = () => {
   return (
     <>
       <Helmet>
-        <title>{`${intl.formatMessage(messages.endOfCourseTitle)} | ${title} | ${getConfig().SITE_NAME}`}</title>
+        <title>{`Kết thúc khóa học | ${title} | ${getConfig().SITE_NAME}`}</title>
       </Helmet>
       <div className="row w-100 mx-0 mb-4 px-5 py-4 border border-light justify-content-center">
         <div className="col-12 p-0 h2 text-center">
-          { intl.formatMessage(messages.endOfCourseHeader) }
+          Kết thúc khóa học
         </div>
         <Alert variant="primary" className="col col-lg-10 mt-4">
           <div className="row w-100 m-0 align-items-start">
-            <div className="flex-grow-1 col-sm p-0">{ intl.formatMessage(messages.endOfCourseDescription) }</div>
+            <div className="flex-grow-1 col-sm p-0">Có vẻ như bạn chưa đạt điểm đủ để vượt qua khóa học này. Hãy kiểm tra điểm số của bạn và xem bạn có thể cải thiện ở đâu.</div>
             {progressLink && (
               <Button
                 variant="primary"
@@ -49,7 +49,7 @@ const CourseNonPassing = () => {
                 href={progressLink}
                 onClick={() => logClick(org, courseId, administrator, 'view_grades')}
               >
-                {intl.formatMessage(messages.viewGradesButton)}
+                Xem điểm số
               </Button>
             )}
           </div>

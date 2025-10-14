@@ -95,8 +95,8 @@ const WeeklyLearningGoalCard = ({
     >
       <Card.Header
         size="sm"
-        title={(<div id="set-weekly-goal-header">{intl.formatMessage(messages.setWeeklyGoal)}</div>)}
-        subtitle={intl.formatMessage(messages.setWeeklyGoalDetail)}
+        title={(<div id="set-weekly-goal-header">Đặt mục tiêu học tập hàng tuần</div>)}
+        subtitle="Đặt mục tiêu để duy trì động lực và theo dõi tiến độ của bạn. Sau này bạn có thể thay đổi mục tiêu này."
       />
       <Card.Section className="text-gray-700 small">
         <div
@@ -126,7 +126,7 @@ const WeeklyLearningGoalCard = ({
             onChange={(event) => handleSubscribeToReminders(event)}
             disabled={!daysPerWeekGoal}
           >
-            <small>{intl.formatMessage(messages.setGoalReminder)}</small>
+            <small>Gửi email nhắc nhở để giúp tôi duy trì mục tiêu</small>
           </Form.Switch>
         </div>
       </Card.Section>
@@ -140,7 +140,7 @@ const WeeklyLearningGoalCard = ({
               />
             </div>
             <div className="col">
-              {intl.formatMessage(messages.goalReminderDetail)}
+              Chúng tôi sẽ gửi email nhắc nhở để giúp bạn đạt được mục tiêu hàng tuần của mình.
             </div>
           </div>
         </Card.Section>

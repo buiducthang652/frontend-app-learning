@@ -43,23 +43,18 @@ const AccessExpirationAlert = ({ payload }) => {
     deadlineMessage = (
       <>
         <br />
-        <FormattedMessage
-          id="learning.accessExpiration.deadline"
-          defaultMessage="Upgrade by {date} to get unlimited access to the course as long as it exists on the site."
-          description="Warning shown to learner to upgrade while they are enrolled on the audit version and it's possible to upgrade"
-          values={{
-            date: (
-              <FormattedDate
-                key="accessExpirationUpgradeDeadline"
-                day="numeric"
-                month="short"
-                year="numeric"
-                value={upgradeDeadline}
-                {...timezoneFormatArgs}
-              />
-            ),
-          }}
-        />
+        <>
+          Nâng cấp trước{' '}
+          <FormattedDate
+            key="accessExpirationUpgradeDeadline"
+            day="numeric"
+            month="short"
+            year="numeric"
+            value={upgradeDeadline}
+            {...timezoneFormatArgs}
+          />
+          {' '}để có quyền truy cập không giới hạn vào khóa học miễn là nó còn tồn tại trên trang web.
+        </>
         &nbsp;
         <Hyperlink
           className="font-weight-bold"
@@ -67,7 +62,7 @@ const AccessExpirationAlert = ({ payload }) => {
           destination={upgradeUrl}
           onClick={logClick}
         >
-          {intl.formatMessage(messages.upgradeNow)}
+          Nâng cấp ngay
         </Hyperlink>
       </>
     );
@@ -76,42 +71,28 @@ const AccessExpirationAlert = ({ payload }) => {
   return (
     <Alert variant="info" icon={Info}>
       <span className="font-weight-bold">
-        <FormattedMessage
-          id="learning.accessExpiration.header"
-          defaultMessage="Audit Access Expires {date}"
-          description="Headline for auditing deadline"
-          values={{
-            date: (
-              <FormattedDate
-                key="accessExpirationHeaderDate"
-                day="numeric"
-                month="short"
-                year="numeric"
-                value={expirationDate}
-                {...timezoneFormatArgs}
-              />
-            ),
-          }}
+        Quyền truy cập Kiểm toán hết hạn{' '}
+        <FormattedDate
+          key="accessExpirationHeaderDate"
+          day="numeric"
+          month="short"
+          year="numeric"
+          value={expirationDate}
+          {...timezoneFormatArgs}
         />
       </span>
       <br />
-      <FormattedMessage
-        id="learning.accessExpiration.body"
-        defaultMessage="You lose all access to this course, including your progress, on {date}."
-        description="Message body to tell learner the consequences of course expiration."
-        values={{
-          date: (
-            <FormattedDate
-              key="accessExpirationBodyDate"
-              day="numeric"
-              month="short"
-              year="numeric"
-              value={expirationDate}
-              {...timezoneFormatArgs}
-            />
-          ),
-        }}
-      />
+      <>
+        Bạn sẽ mất tất cả quyền truy cập vào khóa học này, bao gồm cả tiến độ của bạn, vào ngày{' '}
+        <FormattedDate
+          key="accessExpirationBodyDate"
+          day="numeric"
+          month="short"
+          year="numeric"
+          value={expirationDate}
+          {...timezoneFormatArgs}
+        />.
+      </>
       {deadlineMessage}
     </Alert>
   );

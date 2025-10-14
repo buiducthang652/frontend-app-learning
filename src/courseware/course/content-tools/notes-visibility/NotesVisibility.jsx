@@ -42,7 +42,7 @@ const NotesVisibility = ({ course }) => {
       aria-checked={visible ? 'true' : 'false'}
     >
       <FontAwesomeIcon icon={faPencilAlt} aria-hidden="true" className="mr-2" />
-      {intl.formatMessage(messages[message])}
+      {visible ? 'Ẩn ghi chú' : 'Hiện ghi chú'}
     </button>
   );
 };

@@ -29,7 +29,7 @@ const UnitNavigation = ({
       <PreviousButton
         isFirstUnit={isFirstUnit}
         variant="outline-secondary"
-        buttonLabel={intl.formatMessage(messages.previousButton)}
+        buttonLabel="Trước"
         buttonStyle={buttonStyle}
         onClick={onClickPrevious}
         previousLink={previousLink}
@@ -40,7 +40,7 @@ const UnitNavigation = ({
 
   const renderNextButton = () => {
     const { exitActive, exitText } = GetCourseExitNavigation(courseId, intl);
-    const buttonText = (isLastUnit && exitText) ? exitText : intl.formatMessage(messages.nextButton);
+    const buttonText = (isLastUnit && exitText) ? exitText : 'Tiếp theo';
     const disabled = isLastUnit && !exitActive;
     const variant = 'outline-primary';
     const buttonStyle = `next-button ${isAtTop ? 'text-dark' : 'justify-content-center'}`;

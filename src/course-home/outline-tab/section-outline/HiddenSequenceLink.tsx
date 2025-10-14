@@ -15,7 +15,7 @@ const HiddenSequenceLink: React.FC<Props> = () => {
       <span className="small d-flex">
         <Icon className="mr-2" src={Block} data-testid="hide-from-toc-sequence-link-icon" />
         <span data-testid="hide-from-toc-sequence-link-text">
-          {intl.formatMessage(messages.hiddenSequenceLink)}
+          Nội dung này bị ẩn khỏi mục lục khóa học.
         </span>
       </span>
     </div>

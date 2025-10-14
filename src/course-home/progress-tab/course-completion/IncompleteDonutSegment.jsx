@@ -40,7 +40,7 @@ const IncompleteDonutSegment = ({ incompletePercentage }) => {
         overlay={(
           <Popover id="incomplete-tooltip-popover" aria-hidden="true">
             <Popover.Content>
-              {intl.formatMessage(messages.incompleteContentTooltip)}
+              Nội dung chưa hoàn thành
             </Popover.Content>
           </Popover>
         )}

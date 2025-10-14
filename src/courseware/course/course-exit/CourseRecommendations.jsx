@@ -80,17 +80,10 @@ const CourseCard = ({
   );
 
   const subtitle = (
-    <FormattedMessage
-      id="courseCelebration.recommendations.card.schools.label"
-      description="Screenreader label for the Schools and Partners running the course."
-      defaultMessage="Schools and Partners"
-    >{text => (
-      <>
-        <span className="sr-only">{text}: </span>
-        {truncate(formattedOwners, 40, { reserveLastWord: -1 })}
-      </>
-    )}
-    </FormattedMessage>
+    <>
+      <span className="sr-only">Trường học và Đối tác: </span>
+      {truncate(formattedOwners, 40, { reserveLastWord: -1 })}
+    </>
   );
 
   return (
@@ -108,7 +101,7 @@ const CourseCard = ({
           <Card.Header title={truncate(title, 70, { reserveLastWord: -1 })} subtitle={subtitle} size="sm" />
           {/* Section is needed for internal vertical spacing to work out. If you can remove, be my guest */}
           <Card.Section> <></> </Card.Section>
-          <Card.Footer textElement={intl.formatMessage(messages.recommendationsCourseFooter)}><></></Card.Footer>
+          <Card.Footer textElement="Khóa học"><></></Card.Footer>
         </Card>
       </Hyperlink>
     </div>
@@ -161,7 +154,7 @@ const CourseRecommendations = ({ variant }) => {
   }
 
   if (recommendationsStatus === LOADING) {
-    return <PageLoading srMessage={intl.formatMessage(messages.loadingRecommendations)} />;
+    return <PageLoading srMessage="Đang tải khuyến nghị" />;
   }
 
   const onCardClick = (url) => (e) => {
@@ -178,7 +171,7 @@ const CourseRecommendations = ({ variant }) => {
 
   return (
     <div className="course-recommendations d-flex flex-column align-items-center" data-testid="course-recommendations">
-      <h2 className="text-center mb-3">{intl.formatMessage(messages.recommendationsHeading)}</h2>
+      <h2 className="text-center mb-3">Tiếp tục phát triển kỹ năng với những khóa học này!</h2>
       <div className="mb-2 mt-3">
         <DataTable
           isPaginated
@@ -198,7 +191,7 @@ const CourseRecommendations = ({ variant }) => {
         destination={getConfig().SEARCH_CATALOG_URL}
         className="text-center"
       >
-        {intl.formatMessage(messages.browseCatalog)}
+        Khám phá thêm khóa học
       </Hyperlink>
     </div>
   );

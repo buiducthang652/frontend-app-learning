@@ -48,23 +48,20 @@ const GradeSummaryTableFooter = () => {
       <div className="row w-100 m-0">
         <div id="weighted-grade-summary" className="col-8 p-0 small">
           <Stack gap={2} direction="horizontal">
-            {intl.formatMessage(messages.weightedGradeSummary)}
+            Tổng điểm có trọng số
             <OverlayTrigger
               trigger="hover"
               placement="bottom"
               overlay={(
                 <Tooltip>
-                  {intl.formatMessage(
-                    messages.weightedGradeSummaryTooltip,
-                    { roundedGrade: totalGrade, rawGrade },
-                  )}
+                  Điểm có trọng số tổng hợp được làm tròn thành {totalGrade}%. Điểm thô là {rawGrade}%.
                 </Tooltip>
               )}
             >
               <Icon
                 src={InfoOutline}
                 size="sm"
-                alt={intl.formatMessage(messages.gradeSummaryTooltipAlt)}
+                alt="Xem thông tin tóm tắt điểm"
               />
             </OverlayTrigger>
           </Stack>

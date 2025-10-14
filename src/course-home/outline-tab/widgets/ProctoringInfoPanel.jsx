@@ -137,35 +137,30 @@ const ProctoringInfoPanel = () => {
   if (isNotYetReleased(releaseDate)) {
     onboardingExamButton = (
       <Button variant="secondary" block disabled aria-disabled="true">
-        {intl.formatMessage(
-          messages.proctoringOnboardingButtonNotOpen,
-          {
-            releaseDate: intl.formatDate(releaseDate, {
-              day: 'numeric',
-              month: 'short',
-              year: 'numeric',
-            }),
-          },
-        )}
+        Không có sẵn cho đến {intl.formatDate(releaseDate, {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric',
+        })}
       </Button>
     );
   } else if (onboardingPastDue) {
     onboardingExamButton = (
       <Button variant="secondary" block disabled aria-disabled="true">
-        {intl.formatMessage(messages.proctoringOnboardingButtonPastDue)}
+        Hạn chót đã qua
       </Button>
     );
   } else if (!isNotYetReleased(releaseDate)) {
     if (readableStatus === readableStatuses.otherCourseApproved) {
       onboardingExamButton = (
         <Button variant="primary" block href={link}>
-          {intl.formatMessage(messages.proctoringOnboardingPracticeButton)}
+          Thi thử
         </Button>
       );
     } else if (readableStatus !== readableStatuses.otherCourseApproved) {
       onboardingExamButton = (
         <Button variant="primary" block href={link}>
-          {intl.formatMessage(messages.proctoringOnboardingButton)}
+          Bắt đầu làm quen hệ thống
         </Button>
       );
     }
@@ -176,18 +171,34 @@ const ProctoringInfoPanel = () => {
     <>
       { showInfoPanel && (
         <section className={`mb-4 p-3 outline-sidebar-proctoring-panel ${getBorderClass()}`}>
-          <h2 className="h4" id="outline-sidebar-upgrade-header">{intl.formatMessage(messages.proctoringInfoPanel)}</h2>
+          <h2 className="h4" id="outline-sidebar-upgrade-header">Thông tin giám sát thi</h2>
           <div>
             {readableStatus && (
               <>
                 <p className="h6">
-                  {intl.formatMessage(messages.proctoringCurrentStatus)} {intl.formatMessage(messages[`${readableStatus}ProctoringStatus`])}
+                  Trạng thái hiện tại: {readableStatus === 'notStarted' ? 'Chưa bắt đầu' : 
+                    readableStatus === 'started' ? 'Đã bắt đầu' :
+                    readableStatus === 'submitted' ? 'Đã nộp' :
+                    readableStatus === 'verified' ? 'Đã xác minh' :
+                    readableStatus === 'rejected' ? 'Bị từ chối' :
+                    readableStatus === 'error' ? 'Lỗi' :
+                    readableStatus === 'otherCourseApproved' ? 'Đã được duyệt từ khóa học khác' :
+                    readableStatus === 'expiringSoon' ? 'Sắp hết hạn' :
+                    readableStatus === 'expired' ? 'Đã hết hạn' : 'Không xác định'}
                 </p>
                 <p>
-                  {intl.formatMessage(messages[`${readableStatus}ProctoringMessage`])}
+                  {readableStatus === 'notStarted' ? 'Bạn chưa hoàn thành quy trình làm quen với hệ thống giám sát thi.' :
+                    readableStatus === 'started' ? 'Bạn đã bắt đầu quy trình làm quen nhưng chưa hoàn thành.' :
+                    readableStatus === 'submitted' ? 'Bạn đã hoàn thành quy trình làm quen và đang chờ duyệt.' :
+                    readableStatus === 'verified' ? 'Bạn đã được xác minh để tham gia các bài thi giám sát.' :
+                    readableStatus === 'rejected' ? 'Quy trình làm quen của bạn đã bị từ chối.' :
+                    readableStatus === 'error' ? 'Có lỗi xảy ra trong quy trình làm quen.' :
+                    readableStatus === 'otherCourseApproved' ? 'Bạn đã được duyệt từ khóa học khác.' :
+                    readableStatus === 'expiringSoon' ? 'Xác minh của bạn sắp hết hạn.' :
+                    readableStatus === 'expired' ? 'Xác minh của bạn đã hết hạn.' : ''}
                 </p>
                 <p>
-                  {readableStatus === readableStatuses.otherCourseApproved && intl.formatMessage(messages[`${readableStatus}ProctoringDetail`])}
+                  {readableStatus === readableStatuses.otherCourseApproved && 'Bạn được phép tham gia bài thi thử để làm quen với quy trình.'}
                 </p>
               </>
             )}
@@ -195,20 +206,20 @@ const ProctoringInfoPanel = () => {
               <>
                 <p>
                   {!isCurrentlySubmitted(status) && (
-                    intl.formatMessage(messages.proctoringPanelGeneralInfo)
+                    'Để tham gia các bài thi giám sát trong khóa học này, bạn phải hoàn thành quy trình làm quen với hệ thống giám sát.'
                   )}
                   {isCurrentlySubmitted(status) && (
-                    intl.formatMessage(messages.proctoringPanelGeneralInfoSubmitted)
+                    'Bạn đã hoàn thành quy trình làm quen. Kết quả sẽ được thông báo trong vòng 2-3 ngày làm việc.'
                   )}
                 </p>
-                <p>{intl.formatMessage(messages.proctoringPanelGeneralTime)}</p>
+                <p>Quy trình làm quen mất khoảng 20 phút để hoàn thành.</p>
               </>
             )}
             {isSubmissionRequired(readableStatus) && (
               onboardingExamButton
             )}
             <Button variant="outline-primary" block href="https://support.edx.org/hc/en-us/sections/115004169247-Taking-Timed-and-Proctored-Exams">
-              {intl.formatMessage(messages.proctoringReviewRequirementsButton)}
+              Xem lại yêu cầu kỹ thuật
             </Button>
           </div>
         </section>

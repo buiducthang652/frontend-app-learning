@@ -54,7 +54,7 @@ const CurrentGradeTooltip = ({ tooltipClassName }) => {
         y="20px"
         style={{ transform: `translateX(${currentGradeDirection}3.4em)` }}
       >
-        {intl.formatMessage(messages.currentGradeLabel)}
+        Điểm hiện tại
       </text>
     </>
   );

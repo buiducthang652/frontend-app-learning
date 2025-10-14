@@ -43,7 +43,7 @@ const SidebarUnit = ({
             {title}
           </span>
           <span className="sr-only">
-            , {intl.formatMessage(complete ? messages.completedUnit : messages.incompleteUnit)}
+            , {complete ? "Đơn vị đã hoàn thành" : "Đơn vị chưa hoàn thành"}
           </span>
         </div>
       </UnitLinkWrapper>

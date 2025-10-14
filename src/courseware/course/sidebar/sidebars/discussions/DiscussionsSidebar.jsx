@@ -28,8 +28,8 @@ const DiscussionsSidebar = () => {
 
   return (
     <SidebarBase
-      title={intl.formatMessage(messages.discussionsTitle)}
-      ariaLabel={intl.formatMessage(messages.discussionsTitle)}
+      title="Thảo luận"
+      ariaLabel="Thảo luận"
       sidebarId={ID}
       width="45rem"
       showTitleBar={false}
@@ -40,7 +40,7 @@ const DiscussionsSidebar = () => {
       <iframe
         src={`${discussionsUrl}?inContextSidebar`}
         className="d-flex sticky-top vh-100 w-100 border-0 discussions-sidebar-frame"
-        title={intl.formatMessage(messages.discussionsTitle)}
+        title="Thảo luận"
         allow="clipboard-write"
         loading="lazy"
       />

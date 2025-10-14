@@ -40,9 +40,9 @@ const SidebarSequence = ({
         <span className="align-middle text-dark-500">{title}</span>
         {specialExamInfo && <span className="align-middle small text-muted">{specialExamInfo}</span>}
         <span className="sr-only">
-          , {intl.formatMessage(complete
-          ? courseOutlineMessages.completedAssignment
-          : courseOutlineMessages.incompleteAssignment)}
+          , {complete
+          ? "Hoàn thành"
+          : "Chưa hoàn thành"}
         </span>
       </div>
     </>

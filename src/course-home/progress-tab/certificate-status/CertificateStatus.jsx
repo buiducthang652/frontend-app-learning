@@ -101,35 +101,32 @@ const CertificateStatus = () => {
   } else if (mode === COURSE_EXIT_MODES.nonPassing && !certIsDownloadable) {
     certCase = 'notPassing';
     certEventName = 'not_passing';
-    body = intl.formatMessage(messages[`${certCase}Body`]);
+    body = 'Để đủ điều kiện nhận chứng chỉ, bạn cần đạt điểm đỗ trong khóa học này.';
   } else if (mode === COURSE_EXIT_MODES.inProgress && !certIsDownloadable) {
     certCase = 'inProgress';
     certEventName = 'has_scheduled_content';
-    body = intl.formatMessage(messages[`${certCase}Body`]);
+    body = 'Chúng tôi không thể tạo chứng chỉ của bạn ngay lúc này. Nội dung khóa học mà chúng tôi yêu cầu để có chứng chỉ sẽ được phát hành theo lịch trình.';
   } else if (mode === COURSE_EXIT_MODES.celebration || certIsDownloadable) {
     switch (certStatus) {
       case 'requesting':
         certCase = 'requestable';
         buttonAction = () => { dispatch(requestCert(courseId)); };
-        body = intl.formatMessage(messages[`${certCase}Body`]);
-        buttonText = intl.formatMessage(messages[`${certCase}Button`]);
+        body = 'Chúc mừng, bạn đã hoàn thành khóa học này! Để nhận chứng chỉ, hãy yêu cầu tạo chứng chỉ bên dưới.';
+        buttonText = 'Yêu cầu chứng chỉ';
         break;
 
       case 'unverified':
         certCase = 'unverified';
         if (verificationData.status === 'pending') {
-          body = (<p>{intl.formatMessage(messages.unverifiedPendingBody)}</p>);
+          body = (<p>Bạn đã gửi thông tin xác minh danh tính để được tạo chứng chỉ. Xem xét thường mất 2-3 ngày làm việc.</p>);
         } else {
           body = (
-            <FormattedMessage
-              id="progress.certificateStatus.unverifiedBody"
-              defaultMessage="In order to generate a certificate, you must complete ID verification. {idVerificationSupportLink}."
-              description="Its shown when learner are not verified thus it recommends going over the verification process"
-              values={{ idVerificationSupportLink }}
-            />
+            <>
+              Để tạo chứng chỉ, bạn phải hoàn thành xác minh danh tính. {idVerificationSupportLink}.
+            </>
           );
           buttonLocation = verificationData.link;
-          buttonText = intl.formatMessage(messages[`${certCase}Button`]);
+          buttonText = 'Xác minh danh tính của tôi';
         }
         break;
 
@@ -137,20 +134,15 @@ const CertificateStatus = () => {
         // Certificate available, download/viewable
         certCase = 'downloadable';
         body = (
-          <FormattedMessage
-            id="progress.certificateStatus.downloadableBody"
-            defaultMessage="
-              Showcase your accomplishment on LinkedIn or your resumé today.
-              You can download your certificate now and access it any time from your
-              {dashboardLink} and {profileLink}."
-            description="Recommending an action for learner when course certificate is available"
-            values={{ dashboardLink, profileLink }}
-          />
+          <>
+            Thể hiện thành tích của bạn trên LinkedIn hoặc CV ngay hôm nay.
+            Bạn có thể tải xuống chứng chỉ ngay bây giờ và truy cập bất cứ lúc nào từ {dashboardLink} và {profileLink} của bạn.
+          </>
         );
         if (certWebViewUrl) {
           certEventName = 'earned_viewable';
           buttonLocation = `${getConfig().LMS_BASE_URL}${certWebViewUrl}`;
-          buttonText = intl.formatMessage(messages.viewableButton);
+          buttonText = 'Xem chứng chỉ';
         }
         break;
 
@@ -159,13 +151,10 @@ const CertificateStatus = () => {
         endDate = <FormattedDate value={end} day="numeric" month="long" year="numeric" />;
         certAvailabilityDate = <FormattedDate value={certificateAvailableDate} day="numeric" month="long" year="numeric" />;
         body = (
-          <FormattedMessage
-            id="progress.certificateStatus.notAvailable.endDate"
-            defaultMessage="This course ends on {endDate}. Final grades and any earned certificates are
-            scheduled to be available after {certAvailabilityDate}."
-            description="This shown for leaner when they are eligible for certifcate but it't not available yet, it could because leaners just finished the course quickly!"
-            values={{ endDate, certAvailabilityDate }}
-          />
+          <>
+            Khóa học này kết thúc vào ngày {endDate}. Điểm số cuối cùng và chứng chỉ đạt được
+            được lên lịch có sẵn sau ngày {certAvailabilityDate}.
+          </>
         );
         break;
 
@@ -173,9 +162,9 @@ const CertificateStatus = () => {
       case 'honor_passing':
         if (verifiedMode) {
           certCase = 'upgrade';
-          body = intl.formatMessage(messages[`${certCase}Body`]);
+          body = 'Để nhận chứng chỉ đã xác minh, hãy nâng cấp tài khoản của bạn. Chứng chỉ đã xác minh chứng thực danh tính của bạn, có thể được chia sẻ với các nhà tuyển dụng, và có thể được áp dụng cho tín chỉ học tập.';
           buttonLocation = verifiedMode.upgradeUrl;
-          buttonText = intl.formatMessage(messages[`${certCase}Button`]);
+          buttonText = 'Nâng cấp để nhận chứng chỉ đã xác minh';
         } else {
           certCase = null; // Do not render the certificate component if the upgrade deadline has passed
           certEventName = 'audit_passing_missed_upgrade_deadline';
@@ -193,7 +182,7 @@ const CertificateStatus = () => {
             day: 'numeric',
             ...timezoneFormatArgs,
           });
-          body = intl.formatMessage(messages.notAvailableEndDateBody, { endDate });
+          body = `Khóa học này kết thúc vào ngày ${endDate}. Điểm số cuối cùng và chứng chỉ đạt được sẽ được công bố sau khi khóa học kết thúc.`;
         } else {
           certCase = null;
           certEventName = 'no_certificate_status';
@@ -218,7 +207,13 @@ const CertificateStatus = () => {
     return null;
   }
 
-  const header = intl.formatMessage(messages[`${certCase}Header`]);
+  const header = certCase === 'notPassing' ? 'Chứng chỉ không có sẵn' :
+    certCase === 'inProgress' ? 'Chứng chỉ không có sẵn' :
+    certCase === 'requestable' ? 'Chúc mừng!' :
+    certCase === 'unverified' ? 'Xác minh danh tính của bạn' :
+    certCase === 'downloadable' ? 'Chúc mừng!' :
+    certCase === 'notAvailable' ? 'Chứng chỉ không có sẵn' :
+    certCase === 'upgrade' ? 'Nâng cấp để nhận chứng chỉ đã xác minh' : 'Trạng thái chứng chỉ';
 
   const logCertificateStatusButtonClicked = () => {
     sendTrackEvent('edx.ui.lms.course_progress.certificate_status.clicked', {

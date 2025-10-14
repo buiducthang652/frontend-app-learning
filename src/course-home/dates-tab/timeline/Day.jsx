@@ -74,7 +74,7 @@ const Day = ({
                   <span className="font-weight-bold">{item.assignmentType && `${item.assignmentType}: `}{title}</span>
                   {showDueDateTime && (
                     <span>
-                      <span className="mx-1">due</span>
+                      <span className="mx-1">đến hạn</span>
                       <FormattedTime
                         value={date}
                         timeZoneName="short"

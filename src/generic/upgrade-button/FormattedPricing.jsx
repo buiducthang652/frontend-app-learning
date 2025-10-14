@@ -37,7 +37,7 @@ const FormattedPricing = (props) => {
         <span className="font-weight-bold">{discountedPrice}</span>
         &nbsp;(
         <span className="sr-only">
-          {intl.formatMessage(messages.srInlinePrices, { originalPrice })}
+          Giá gốc {originalPrice}
         </span>
         <span aria-hidden="true">
           <del>{originalPrice}</del>
@@ -50,7 +50,7 @@ const FormattedPricing = (props) => {
   return (
     <>
       <span className="sr-only">
-        {intl.formatMessage(messages.srPrices, { discountedPrice, originalPrice })}
+        Giá khuyến mãi {discountedPrice}, giá gốc {originalPrice}
       </span>
       <span aria-hidden="true">
         <span>{discountedPrice}</span> (<del>{originalPrice}</del>)

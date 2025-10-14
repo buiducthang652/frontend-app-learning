@@ -33,15 +33,15 @@ const CourseInProgress = () => {
   return (
     <>
       <Helmet>
-        <title>{`${intl.formatMessage(messages.endOfCourseTitle)} | ${title} | ${getConfig().SITE_NAME}`}</title>
+        <title>{`Kết thúc khóa học | ${title} | ${getConfig().SITE_NAME}`}</title>
       </Helmet>
       <div className="row w-100 mx-0 mb-4 px-5 py-4 border border-light justify-content-center">
         <div className="col-12 p-0 h2 text-center">
-          { intl.formatMessage(messages.courseInProgressHeader) }
+          Khóa học đang diễn ra
         </div>
         <Alert variant="primary" className="mt-4">
           <div className="row w-100 m-0 align-items-start">
-            <div className="col-md p-0">{ intl.formatMessage(messages.courseInProgressDescription) }</div>
+            <div className="col-md p-0">Có vẻ như bạn chưa hoàn thành khóa học này. Để nhận chứng chỉ, bạn cần hoàn thành tất cả các bài tập bắt buộc.</div>
             {datesTabLink && (
               <Button
                 variant="primary"
@@ -49,7 +49,7 @@ const CourseInProgress = () => {
                 href={datesTabLink}
                 onClick={() => logClick(org, courseId, administrator, 'view_dates_tab')}
               >
-                {intl.formatMessage(messages.viewCourseScheduleButton)}
+                Xem lịch khóa học
               </Button>
             )}
           </div>

@@ -61,7 +61,7 @@ const Section: React.FC<Props> = ({
         onToggle={() => { setOpen(!open); }}
         iconWhenClosed={(
           <IconButton
-            alt={intl.formatMessage(messages.openSection)}
+            alt="Mở rộng phần"
             iconAs={Plus}
             onClick={() => { setOpen(true); }}
             size="sm"
@@ -69,7 +69,7 @@ const Section: React.FC<Props> = ({
         )}
         iconWhenOpen={(
           <IconButton
-            alt={intl.formatMessage(genericMessages.close)}
+            alt="Đóng"
             iconAs={Minus}
             onClick={() => { setOpen(false); }}
             size="sm"

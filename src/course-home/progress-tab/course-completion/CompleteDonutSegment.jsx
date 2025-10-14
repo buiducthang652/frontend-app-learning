@@ -36,7 +36,7 @@ const CompleteDonutSegment = ({ completePercentage, lockedPercentage }) => {
         overlay={(
           <Popover id="complete-content-tooltip-popover" aria-hidden="true">
             <Popover.Content>
-              {intl.formatMessage(messages.completeContentTooltip)}
+              Nội dung đã hoàn thành
             </Popover.Content>
           </Popover>
         )}

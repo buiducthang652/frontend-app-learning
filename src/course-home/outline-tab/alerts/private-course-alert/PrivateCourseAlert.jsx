@@ -30,7 +30,7 @@ const PrivateCourseAlert = ({ payload }) => {
   const { enrollClickHandler, loading } = useEnrollClickHandler(
     courseId,
     org,
-    intl.formatMessage(enrollmentMessages.success),
+    'Bạn đã đăng ký thành công!',
   );
 
   const enrollNowButton = (
@@ -42,7 +42,7 @@ const PrivateCourseAlert = ({ payload }) => {
       size="sm"
       onClick={enrollClickHandler}
     >
-      {intl.formatMessage(enrollmentMessages.enrollNowInline)}
+      Đăng ký ngay
     </Button>
   );
 
@@ -51,7 +51,7 @@ const PrivateCourseAlert = ({ payload }) => {
       style={{ textDecoration: 'underline' }}
       destination={`${getConfig().LMS_BASE_URL}/register?next=${encodeURIComponent(global.location.href)}`}
     >
-      {intl.formatMessage(genericMessages.registerLowercase)}
+      đăng ký
     </Hyperlink>
   );
 
@@ -60,7 +60,7 @@ const PrivateCourseAlert = ({ payload }) => {
       style={{ textDecoration: 'underline' }}
       destination={`${getLoginRedirectUrl(global.location.href)}`}
     >
-      {intl.formatMessage(genericMessages.signInSentenceCase)}
+      Đăng nhập
     </Hyperlink>
   );
 
@@ -69,32 +69,24 @@ const PrivateCourseAlert = ({ payload }) => {
       {anonymousUser && (
         <>
           <p className="font-weight-bold">
-            {intl.formatMessage(enrollmentMessages.alert)}
+            Bạn phải đăng ký để truy cập nội dung khóa học này.
           </p>
-          <FormattedMessage
-            id="learning.privateCourse.signInOrRegister"
-            description="Prompts the user to sign in or register to see course content."
-            defaultMessage="{signIn} or {register} and then enroll in this course."
-            values={{
-              signIn,
-              register,
-            }}
-          />
+          {signIn} hoặc {register} và sau đó đăng ký khóa học này.
         </>
       )}
       {!anonymousUser && (
         <>
-          <p className="font-weight-bold">{intl.formatMessage(outlineMessages.welcomeTo)} {title}</p>
+          <p className="font-weight-bold">Chào mừng đến với {title}</p>
           {canEnroll && (
             <div className="d-flex">
               {enrollNowButton}
-              {intl.formatMessage(messages.toAccess)}
+              để truy cập nội dung khóa học.
               {loading && <FontAwesomeIcon icon={faSpinner} spin />}
             </div>
           )}
           {!canEnroll && (
             <>
-              {intl.formatMessage(enrollmentMessages.alert)}
+              Bạn phải đăng ký để truy cập nội dung khóa học này.
             </>
           )}
         </>

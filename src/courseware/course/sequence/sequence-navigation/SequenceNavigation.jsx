@@ -71,7 +71,7 @@ const SequenceNavigation = ({
       onClick={previousHandler}
       previousLink={previousLink}
       isFirstUnit={isFirstUnit}
-      buttonLabel={shouldDisplayNotificationTriggerInSequence ? null : intl.formatMessage(messages.previousButton)}
+      buttonLabel={shouldDisplayNotificationTriggerInSequence ? null : 'Trước'}
     />
   );
 
@@ -83,7 +83,7 @@ const SequenceNavigation = ({
     if (isLastUnit && exitText) {
       buttonText = exitText;
     } else if (!shouldDisplayNotificationTriggerInSequence) {
-      buttonText = intl.formatMessage(messages.nextButton);
+      buttonText = 'Tiếp theo';
     }
     return navigationDisabledNextSequence || (
       <NextUnitTopNavTriggerSlot

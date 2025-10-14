@@ -24,18 +24,18 @@ const GradeSummaryHeader = ({ allOfSomeAssignmentTypeIsLocked }) => {
   return (
     <Stack gap={2} className="mb-3">
       <Stack direction="horizontal" gap={2}>
-        <h3 className="h4 m-0">{intl.formatMessage(messages.gradeSummary)}</h3>
+        <h3 className="h4 m-0">Tóm tắt điểm</h3>
         <OverlayTrigger
           trigger="hover"
           placement="top"
           overlay={(
             <Tooltip>
-              {intl.formatMessage(messages.gradeSummaryTooltipBody)}
+              Tóm tắt của các loại bài tập trong khóa học này và cách chúng ảnh hưởng đến điểm cuối cùng của bạn.
             </Tooltip>
           )}
         >
           <Icon
-            alt={intl.formatMessage(messages.gradeSummaryTooltipAlt)}
+            alt="Xem thông tin tóm tắt điểm"
             src={InfoOutline}
             size="sm"
           />
@@ -45,16 +45,11 @@ const GradeSummaryHeader = ({ allOfSomeAssignmentTypeIsLocked }) => {
         <Stack direction="horizontal" className="small" gap={2}>
           <Icon size="sm" src={Locked} data-testid="locked-icon" />
           <span>
-            {intl.formatMessage(
-              messages.gradeSummaryLimitedAccessExplanation,
-              {
-                upgradeLink: verifiedMode && (
-                  <Hyperlink destination={verifiedMode.upgradeUrl}>
-                    {intl.formatMessage(messages.courseGradePreviewUpgradeButton)}.
-                  </Hyperlink>
-                ),
-              },
-            )}
+            Chỉ một số điểm mới hiển thị. {verifiedMode && (
+              <Hyperlink destination={verifiedMode.upgradeUrl}>
+                Nâng cấp ngay.
+              </Hyperlink>
+            )} để xem tất cả.
           </span>
         </Stack>
       )}

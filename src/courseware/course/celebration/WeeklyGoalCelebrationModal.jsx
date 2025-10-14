@@ -28,27 +28,20 @@ const WeeklyGoalCelebrationModal = ({
     <StandardModal
       footerNode={(
         <ActionRow isStacked className="pb-2">
-          <Button onClick={onClose}>{intl.formatMessage(messages.keepItUp)}</Button>
+          <Button onClick={onClose}>Tiếp tục phấn đấu!</Button>
         </ActionRow>
       )}
       hasCloseButton={false}
       isOpen={isOpen}
       onClose={onClose}
       title={(
-        <p className="h2 text-center mr-n5 pt-4">{intl.formatMessage(messages.goalMet)}</p>
+        <p className="h2 text-center mr-n5 pt-4">Hoàn thành mục tiêu!</p>
       )}
       {...rest}
     >
       <>
         <div className="text-center px-3">
-          <FormattedMessage
-            id="learning.celebration.goalCongrats"
-            defaultMessage="Congratulations, you met your learning goal of {nTimes} a week."
-            description="Greeting for learners for their weekly goal, it as well indicate their gaol, i.e. (1,3 or 5 time(s) a week)"
-            values={{
-              nTimes: (<strong>{daysPerWeek} {daysPerWeek === 1 ? 'time' : 'times'}</strong>),
-            }}
-          />
+          Chúc mừng, bạn đã đạt được mục tiêu học tập <strong>{daysPerWeek} {daysPerWeek === 1 ? 'lần' : 'lần'}</strong> một tuần.
         </div>
         <div className="d-flex justify-content-center py-4.5">
           <img src={Target} alt="" />
@@ -60,14 +53,7 @@ const WeeklyGoalCelebrationModal = ({
             style={{ height: '21px', width: '22px' }}
           />
           <div>
-            <FormattedMessage
-              id="learning.celebration.setGoal"
-              defaultMessage="Setting a goal can help you {strongText} in your course."
-              description="It explain the advantages of setting goal"
-              values={{
-                strongText: (<strong>achieve higher performance</strong>),
-              }}
-            />
+            Đặt mục tiêu có thể giúp bạn <strong>đạt hiệu suất cao hơn</strong> trong khóa học của mình.
           </div>
         </div>
       </>

@@ -67,8 +67,8 @@ const WelcomeMessage = ({ courseId, nextElementRef }) => {
           }}
           variant="outline-primary"
         >
-          {showShortMessage ? intl.formatMessage(messages.welcomeMessageShowMoreButton)
-            : intl.formatMessage(messages.welcomeMessageShowLessButton)}
+          {showShortMessage ? 'Hiện thêm'
+            : 'Hiện ít hơn'}
         </Button>,
       ] : []}
     >
@@ -80,7 +80,7 @@ const WelcomeMessage = ({ courseId, nextElementRef }) => {
               data-testid="short-welcome-message-iframe"
               key="short-html"
               html={shortWelcomeMessageHtml}
-              title={intl.formatMessage(messages.welcomeMessage)}
+              title="Thông điệp chào mừng"
             />
           ) : (
             <LmsHtmlFragment
@@ -88,7 +88,7 @@ const WelcomeMessage = ({ courseId, nextElementRef }) => {
               data-testid="long-welcome-message-iframe"
               key="full-html"
               html={cleanedWelcomeMessageHtml}
-              title={intl.formatMessage(messages.welcomeMessage)}
+              title="Thông điệp chào mừng"
             />
           )}
         </TransitionReplace>

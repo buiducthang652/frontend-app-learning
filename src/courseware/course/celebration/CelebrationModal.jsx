@@ -36,23 +36,23 @@ const CelebrationModal = ({
     <StandardModal
       footerNode={(
         <ActionRow isStacked className="pb-2">
-          <Button onClick={onClose}>{intl.formatMessage(messages.forward)}</Button>
+          <Button onClick={onClose}>Tiếp tục</Button>
         </ActionRow>
       )}
       hasCloseButton={false}
       isOpen={isOpen}
       onClose={onClose}
       title={(
-        <p className="h2 text-center mr-n5 pt-4">{intl.formatMessage(messages.congrats)}</p>
+        <p className="h2 text-center mr-n5 pt-4">Chúc mừng!</p>
       )}
       {...rest}
     >
       <>
-        <p className="text-center">{intl.formatMessage(messages.completed)}</p>
+        <p className="text-center">Bạn đã hoàn thành phần đầu tiên của khóa học!</p>
         {!wideScreen && <img src={ClapsMobile} alt="" className="img-fluid" />}
         {wideScreen && <img src={ClapsTablet} alt="" className="img-fluid w-100" />}
         <p className="mt-3 text-center">
-          <strong>{intl.formatMessage(messages.earned)}</strong> {intl.formatMessage(messages.share)}
+          <strong>Bạn đã kiếm được điểm tiến độ!</strong> Chia sẻ thành tích của bạn:
         </p>
         <SocialIcons
           analyticsId="edx.ui.lms.celebration.social_share.clicked"

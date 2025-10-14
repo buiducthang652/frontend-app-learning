@@ -30,14 +30,7 @@ const NewUserCourseHomeTourModal = ({
           />
           <ModalDialog.Hero.Content style={{ maxWidth: '20rem' }}>
             <ModalDialog.Title as="h2">
-              <FormattedMessage
-                id="tours.newUserModal.title"
-                defaultMessage="{welcome} {siteName} course!"
-                values={{
-                  siteName: getConfig().SITE_NAME,
-                  welcome: <span className="text-accent-b">{intl.formatMessage(messages.newUserModalTitleWelcome)}</span>,
-                }}
-              />
+              <span className="text-accent-b">Chào mừng bạn đến với</span> {getConfig().SITE_NAME} khóa học!
             </ModalDialog.Title>
           </ModalDialog.Hero.Content>
         </ModalDialog.Hero>
@@ -48,19 +41,19 @@ const NewUserCourseHomeTourModal = ({
             variant="tertiary"
             onClick={onDismiss}
           >
-            {intl.formatMessage(messages.skipForNow)}
+            Bỏ qua bây giờ
           </Button>
           <Button
             variant="brand"
             onClick={onStartTour}
           >
-            {intl.formatMessage(messages.beginTour)}
+            Bắt đầu chuyến tham quan
           </Button>
         </ActionRow>
         )}
       onClose={onDismiss}
     >
-      <p className="text-dark-900">{intl.formatMessage(messages.newUserModalBody, { siteName: getConfig().SITE_NAME })}</p>
+      <p className="text-dark-900">Hãy tham gia một chuyến tham quan nhanh về {getConfig().SITE_NAME} để bạn có thể tận dụng tối đa khóa học của mình.</p>
     </MarketingModal>
   );
 };

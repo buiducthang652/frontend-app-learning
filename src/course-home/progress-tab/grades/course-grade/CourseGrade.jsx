@@ -34,11 +34,11 @@ const CourseGrade = () => {
         <div className="row w-100 m-0 p-4">
           <div className="col-12 col-sm-6 p-0 pr-sm-5.5">
             <h2>{creditCourseRequirements
-              ? intl.formatMessage(messages.gradesAndCredit)
-              : intl.formatMessage(messages.grades)}
+              ? 'Điểm số & Tín chỉ'
+              : 'Điểm số'}
             </h2>
             <p className="small">
-              {intl.formatMessage(messages.courseGradeBody)}
+              Phần này hiển thị điểm số tổng thể cho tất cả các phần có điểm trong khóa học này.
             </p>
           </div>
           <GradeBar passingGrade={passingGrade} />

@@ -48,7 +48,7 @@ const NotificationTrigger = ({
   });
 
   return (
-    <SidebarTriggerBase onClick={onClick} ariaLabel={intl.formatMessage(messages.openNotificationTrigger)}>
+    <SidebarTriggerBase onClick={onClick} ariaLabel="Hiển thị khay thông báo">
       <NotificationIcon status={notificationStatus} notificationColor="bg-danger-500" />
     </SidebarTriggerBase>
   );

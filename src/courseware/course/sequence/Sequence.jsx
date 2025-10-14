@@ -125,11 +125,11 @@ const Sequence = ({
   const loading = sequenceStatus === 'loading' || (sequenceStatus === 'failed' && sequenceMightBeUnit);
   if (loading) {
     if (!sequenceId) {
-      return (<div> {intl.formatMessage(messages.noContent)} </div>);
+      return (<div> Không có nội dung </div>);
     }
     return (
       <PageLoading
-        srMessage={intl.formatMessage(messages.loadingSequence)}
+        srMessage="Đang tải chuỗi bài học"
       />
     );
   }
@@ -235,7 +235,7 @@ const Sequence = ({
   // sequence status 'failed' and any other unexpected sequence status.
   return (
     <p className="text-center py-5 mx-auto" style={{ maxWidth: '30em' }}>
-      {intl.formatMessage(messages.loadFailure)}
+      Có lỗi xảy ra khi tải nội dung. Vui lòng thử lại.
     </p>
   );
 };

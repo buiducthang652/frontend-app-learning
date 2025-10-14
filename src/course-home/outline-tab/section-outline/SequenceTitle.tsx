@@ -36,7 +36,7 @@ const SequenceTitle: React.FC<Props> = ({
             src={CheckCircle}
             className="float-left text-success mt-1"
             aria-hidden={complete}
-            svgAttrs={{ 'aria-label': intl.formatMessage(messages.completedAssignment) }}
+            svgAttrs={{ 'aria-label': 'Bài tập đã hoàn thành' }}
             size="sm"
           />
         ) : (
@@ -44,7 +44,7 @@ const SequenceTitle: React.FC<Props> = ({
             src={CheckCircleOutline}
             className="float-left text-gray-400 mt-1"
             aria-hidden={complete}
-            svgAttrs={{ 'aria-label': intl.formatMessage(messages.incompleteAssignment) }}
+            svgAttrs={{ 'aria-label': 'Bài tập chưa hoàn thành' }}
             size="sm"
           />
         )}
@@ -52,7 +52,7 @@ const SequenceTitle: React.FC<Props> = ({
       <div className="col-10 p-0 ml-3 text-break">
         <span className="align-middle">{displayTitle}</span>
         <span className="sr-only">
-          , {intl.formatMessage(complete ? messages.completedAssignment : messages.incompleteAssignment)}
+          , {complete ? 'Bài tập đã hoàn thành' : 'Bài tập chưa hoàn thành'}
         </span>
         <EffortEstimate className="ml-3 align-middle" block={sequence} />
       </div>

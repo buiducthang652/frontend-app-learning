@@ -28,19 +28,19 @@ const CreditInformation = () => {
       variant="muted"
       isInline
       destination={getConfig().CREDIT_HELP_LINK_URL}
-    >{intl.formatMessage(messages.courseCredit)}
+    >tín chỉ khóa học
     </Hyperlink>
   );
 
   switch (creditCourseRequirements.eligibilityStatus) {
     case 'not_eligible':
-      eligibilityStatus = intl.formatMessage(messages.creditNotEligibleStatus, { creditLink });
+      eligibilityStatus = <>Bạn không đủ điều kiện nhận {creditLink} cho khóa học này.</>;
       break;
     case 'eligible':
-      eligibilityStatus = intl.formatMessage(messages.creditEligibleStatus, { dashboardLink, creditLink });
+      eligibilityStatus = <>Bạn đã đáp ứng các yêu cầu để nhận {creditLink} cho khóa học này. Đi đến {dashboardLink} để mua {creditLink}.</>;
       break;
     case 'partial_eligible':
-      eligibilityStatus = intl.formatMessage(messages.creditPartialEligibleStatus, { creditLink });
+      eligibilityStatus = <>Bạn đang trên đường đáp ứng các yêu cầu để nhận {creditLink} cho khóa học này.</>;
       break;
     default:
       break;
@@ -48,23 +48,23 @@ const CreditInformation = () => {
   creditCourseRequirements.requirements.forEach(requirement => {
     switch (requirement.status) {
       case 'submitted':
-        requirementStatus = (<>{intl.formatMessage(messages.verificationSubmitted)} <Icon src={CheckCircle} className="text-success-500 d-inline-flex align-bottom" /></>);
+        requirementStatus = (<>Đã gửi <Icon src={CheckCircle} className="text-success-500 d-inline-flex align-bottom" /></>);
         break;
       case 'failed':
       case 'declined':
-        requirementStatus = (<>{intl.formatMessage(messages.verificationFailed)} <Icon src={WarningFilled} className="d-inline-flex align-bottom" /></>);
+        requirementStatus = (<>Thất bại <Icon src={WarningFilled} className="d-inline-flex align-bottom" /></>);
         break;
       case 'satisfied':
-        requirementStatus = (<>{intl.formatMessage(messages.completed)} <Icon src={CheckCircle} className="text-success-500 d-inline-flex align-bottom" /></>);
+        requirementStatus = (<>Hoàn thành <Icon src={CheckCircle} className="text-success-500 d-inline-flex align-bottom" /></>);
         break;
       default:
-        requirementStatus = (<>{intl.formatMessage(messages.upcoming)} <Icon src={WatchFilled} className="text-gray-500 d-inline-flex align-bottom" /></>);
+        requirementStatus = (<>Sắp tới <Icon src={WatchFilled} className="text-gray-500 d-inline-flex align-bottom" /></>);
     }
     requirements.push((
       <div className="row w-100 m-0 small" key={`requirement-${requirement.order}`}>
         <p className="font-weight-bold">
           {requirement.namespace === 'grade'
-            ? `${intl.formatMessage(messages.minimumGrade, { minGrade: Number(requirement.criteria.minGrade) * 100 })}:`
+            ? `Điểm tối thiểu ${Number(requirement.criteria.minGrade) * 100}%:`
             : `${requirement.displayName}:`}
         </p>
         <div className="ml-1">
@@ -76,7 +76,7 @@ const CreditInformation = () => {
 
   return (
     <>
-      <h3 className="h4 col-12 p-0">{intl.formatMessage(messages.requirementsHeader)}</h3>
+      <h3 className="h4 col-12 p-0">Yêu cầu</h3>
       <p className="small">{eligibilityStatus}</p>
       {requirements}
     </>

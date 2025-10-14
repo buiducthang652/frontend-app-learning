@@ -29,12 +29,12 @@ const CoursewareSearchToggle = () => {
         variant="outline-primary"
         size="sm"
         className="p-1 mt-2 mr-2"
-        aria-label={intl.formatMessage(messages.searchOpenAction)}
+        aria-label="Tìm kiếm trong khóa học này"
         onClick={handleSearchOpenClick}
         data-testid="courseware-search-open-button"
         iconAfter={ManageSearch}
       >
-        {intl.formatMessage(messages.contentSearchButton)}
+        Tìm kiếm nội dung
       </Button>
     </div>
   );

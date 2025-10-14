@@ -110,7 +110,7 @@ const CourseLicense = ({
   const renderAllRightsReservedLicense = () => (
     <div className="text-gray-500">
       <FontAwesomeIcon aria-hidden="true" className="mr-1" icon={faCopyright} />
-      {intl.formatMessage(messages['learn.course.license.allRightsReserved.text'])}
+      Bảo lưu tất cả quyền
     </div>
   );
 
@@ -122,20 +122,20 @@ const CourseLicense = ({
       href={`https://creativecommons.org/licenses/${activeCreativeCommonsLicenseTags.join('-')}/${version}/`}
     >
       <span className="sr-only">
-        {intl.formatMessage(messages['learn.course.license.creativeCommons.terms.preamble'])}&nbsp;
+        Được cấp phép theo&nbsp;
       </span>
       <FontAwesomeIcon aria-hidden="true" className="mr-1" icon={faCreativeCommons} />
       {activeCreativeCommonsLicenseTags.map(tag => (
         <span key={tag}>
           <span className="sr-only">
-            {intl.formatMessage(messages[CreativeCommonsLicenseTags[tag].intlMessagesId])}&nbsp;
+            {tag === 'by' ? 'Ghi công' : tag === 'nc' ? 'Phi thương mại' : tag === 'nd' ? 'Không phái sinh' : tag === 'sa' ? 'Chia sẻ tương tự' : tag === 'zero' ? 'Miền công cộng' : tag}&nbsp;
           </span>
           <FontAwesomeIcon aria-hidden="true" className="mr-1" icon={CreativeCommonsLicenseTags[tag].icon} />
         </span>
       ))}
-      {intl.formatMessage(messages['learn.course.license.creativeCommons.text'])}
+      Giấy phép Creative Commons
       <span className="sr-only">
-        {intl.formatMessage(messages['learn.course.license.creativeCommons.externalSite.screenreaderOnly.message'])}
+        . Mở trong tab mới
       </span>
     </a>
   );

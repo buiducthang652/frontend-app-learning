@@ -21,15 +21,15 @@ const ProgressHeader = () => {
   const viewingOtherStudentsProgressPage = (targetUserId && targetUserId !== userId);
 
   const pageTitle = viewingOtherStudentsProgressPage
-    ? intl.formatMessage(messages.progressHeaderForTargetUser, { username })
-    : intl.formatMessage(messages.progressHeader);
+    ? `Tiến độ khóa học của ${username}`
+    : 'Tiến độ khóa học';
 
   return (
     <div className="row w-100 m-0 mt-3 mb-4 justify-content-between">
       <h1>{pageTitle}</h1>
       {administrator && studioUrl && (
       <Button variant="outline-primary" size="sm" className="align-self-center" href={studioUrl}>
-        {intl.formatMessage(messages.studioLink)}
+        Xem trong Studio
       </Button>
       )}
     </div>

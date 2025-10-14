@@ -51,7 +51,7 @@ const UnitNavigationEffortEstimate = ({
   // Note: we don't use `children` here - we replace it with the next sequence's title.
   return (
     <div className="d-inline-block text-wrap">
-      {intl.formatMessage(messages.nextUpButton, { title: nextSequence.title })}
+      Tiếp theo: {nextSequence.title}
       <EffortEstimate className="d-block mt-1" block={nextSequence} />
     </div>
   );

@@ -27,14 +27,14 @@ const EnrollmentAlert = ({ payload }) => {
   const { enrollClickHandler, loading } = useEnrollClickHandler(
     courseId,
     org,
-    intl.formatMessage(messages.success),
+    'Bạn đã đăng ký thành công khóa học này!',
   );
 
-  let text = intl.formatMessage(messages.alert);
+  let text = 'Bạn phải đăng ký khóa học để xem nội dung khóa học.';
   let type = 'warning';
   let icon = WarningFilled;
   if (isStaff) {
-    text = intl.formatMessage(messages.staffAlert);
+    text = 'Bạn đang xem khóa học này với tư cách là nhân viên và chưa đăng ký.';
     type = 'info';
     icon = Info;
   } else if (extraText) {
@@ -43,7 +43,7 @@ const EnrollmentAlert = ({ payload }) => {
 
   const button = canEnroll && (
     <Button disabled={loading} variant="link" className="p-0 border-0 align-top mx-1" size="sm" style={{ textDecoration: 'underline' }} onClick={enrollClickHandler}>
-      {intl.formatMessage(messages.enrollNowSentence)}
+      Đăng ký ngay.
     </Button>
   );
 

@@ -48,7 +48,7 @@ const SubsectionTitleCell = ({ subsection }) => {
       <Row className="w-100 m-0">
         <Collapsible.Trigger
           className="mr-1 position-absolute"
-          aria-label={intl.formatMessage(messages.problemScoreToggleAltText, { subsectionTitle: displayName })}
+          aria-label={`Bật/tắt điểm cho ${displayName}`}
           tabIndex={gradesFeatureIsFullyLocked ? '-1' : '0'}
         >
           <Collapsible.Visible whenClosed><Icon src={ArrowDropDown} /></Collapsible.Visible>
@@ -59,7 +59,7 @@ const SubsectionTitleCell = ({ subsection }) => {
             : (
               <Icon
                 id={`detailedGradesBlockedIcon${subsection.blockKey}`}
-                aria-label={intl.formatMessage(messages.noAccessToSubsection, { displayName })}
+                aria-label={`Bạn không có quyền truy cập vào ${displayName}`}
                 className="mr-1 mt-1 d-inline-flex"
                 style={{ height: '1rem', width: '1rem' }}
                 src={Locked}
@@ -92,7 +92,7 @@ const SubsectionTitleCell = ({ subsection }) => {
                   style={{ height: '1.3em', width: '1.3em' }}
                 />
               </div>
-              <div>{intl.formatMessage(messages.sectionGradeOverridden)}</div>
+              <div>Điểm của phần này đã được ghi đè bởi người hướng dẫn.</div>
             </div>
           )}
           <ProblemScoreDrawer problemScores={problemScores} subsection={subsection} />

@@ -25,7 +25,7 @@ const UpgradeFootnote = ({ deadline, href }) => {
       className="text-reset"
       onClick={() => logClick(org, courseId, administrator, 'upgrade_footnote')}
     >
-      {intl.formatMessage(messages.upgradeLink)}
+      nâng cấp ngay
     </Hyperlink>
   );
 
@@ -41,17 +41,7 @@ const UpgradeFootnote = ({ deadline, href }) => {
   return (
     <Footnote
       icon={faCalendarAlt}
-      text={(
-        <FormattedMessage
-          id="courseExit.upgradeFootnote"
-          defaultMessage="Access to this course and its materials are available on your dashboard until {expirationDate}. To extend access, {upgradeLink}."
-          values={{
-            expirationDate,
-            upgradeLink,
-          }}
-          description="Message body to tell learner until when the materiel will be available, and to suggest to upgrade"
-        />
-      )}
+      text={`Quyền truy cập vào khóa học này và tài liệu của nó có sẵn trên bảng điều khiển của bạn cho đến ${expirationDate}. Để gia hạn quyền truy cập, ${upgradeLink}.`}
     />
   );
 };

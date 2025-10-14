@@ -1,5 +1,10 @@
-/* eslint-disable react/prop-types */
-import React, { useEffect, useState } from 'react';
+/* eslint-disable react    const factoids = [
+    (<>Người dùng học {streakLength} ngày liên tiếp <b>{boldedSectionA}</b> so với những người không học.</>),
+    (<>Người dùng học {streakLength} ngày liên tiếp <b>{boldedSectionB}</b> so với những người không học.</>),
+  ];ười dùng học {streakLength} ngày liên tiếp <b>{boldedSectionB}</b> so với những người không học.</>),g học {streakLength} ngày liên tiếp <b>{boldedSectionA}</b> so với những người không học.</>),toids = [
+    (<>Người dùng học {streakLength} ngày liên tiếp <b>{boldedSectionA}</b> so với những người không học.</>),
+    (<>Người dùng học {streakLength} ngày liên tiếp <b>{boldedSectionB}</b> so với những người không học.</>),
+  ];port React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { camelCaseObject, getConfig } from '@edx/frontend-platform';
 import { sendTrackEvent } from '@edx/frontend-platform/analytics';
@@ -19,8 +24,8 @@ import messages from './messages';
 import { recordModalClosing, recordStreakCelebration } from './utils';
 
 function getRandomFactoid(intl, streakLength) {
-  const boldedSectionA = intl.formatMessage(messages.streakFactoidABoldedSection);
-  const boldedSectionB = intl.formatMessage(messages.streakFactoidBBoldedSection);
+  const boldedSectionA = "có khả năng vượt qua khóa học cao hơn 20 lần";
+  const boldedSectionB = "hoàn thành nội dung khóa học nhiều hơn trung bình 5 lần";
   const factoids = [
     (<FormattedMessage
       id="learning.streakcelebration.factoida"
@@ -51,8 +56,8 @@ async function calculateVoucherDiscount(voucher, sku, username) {
 
 const CloseText = ({ intl }) => (
   <span>
-    {intl.formatMessage(messages.streakButton)}
-    <span className="sr-only">. {intl.formatMessage(messages.streakButtonSrOnly)}</span>
+    Tiếp tục
+    <span className="sr-only">. Đóng modal và tiếp tục</span>
   </span>
 );
 
@@ -139,7 +144,7 @@ const StreakModal = ({
     }
   }
 
-  const title = `${streakLengthToCelebrate} ${intl.formatMessage(messages.streakHeader)}`;
+  const title = `${streakLengthToCelebrate} chuỗi ngày`;
   const showOffer = offer && streakDiscountCouponEnabled;
 
   return (
@@ -160,7 +165,7 @@ const StreakModal = ({
         </ModalDialog.Title>
       </ModalDialog.Header>
       <ModalDialog.Body className="modal-body">
-        <p className="text-center">{intl.formatMessage(messages.streakBody)}</p>
+        <p className="text-center">Tiếp tục nhé, bạn đang làm rất tốt!</p>
         <p className="modal-image text-center">
           {!wideScreen && <img src={StreakMobileImage} alt="" className="img-fluid" />}
           {wideScreen && <img src={StreakDesktopImage} alt="" className="img-fluid" />}
@@ -181,17 +186,9 @@ const StreakModal = ({
             <div className="d-flex">
               <Icon className="col-small ml-3 text-success-500" src={MoneyFilled} />
               <div className="col-11 factoid-wrapper">
-                <b>{intl.formatMessage(messages.congratulations)}</b>
-                &nbsp;{intl.formatMessage(messages.streakDiscountMessage, {
-                  percent: (discountPercent * 100).toFixed(0),
-                })}&nbsp;
-                <FormattedMessage
-                  id="learning.streakCelebration.streakCelebrationCouponEndDateMessage"
-                  defaultMessage="Ends {date}."
-                  values={{
-                    date: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toLocaleDateString({ timeZone: 'UTC' }),
-                  }}
-                />
+                <b>Chúc mừng!</b>
+                &nbsp;Bạn đã mở khóa giảm giá {(discountPercent * 100).toFixed(0)}% khi nâng cấp khóa học này trong thời gian giới hạn.&nbsp;
+                Kết thúc {new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toLocaleDateString({ timeZone: 'UTC' })}.
               </div>
             </div>
           </Alert>
@@ -210,7 +207,7 @@ const StreakModal = ({
                   verifiedMode={mode}
                 />
                 <ModalDialog.CloseButton variant="outline-brand" className="btn-sm">
-                  {intl.formatMessage(messages.streakButtonAA759)}
+                  Tiếp tục với khóa học
                 </ModalDialog.CloseButton>
               </>
             )}
@@ -223,7 +220,7 @@ const StreakModal = ({
                   verifiedMode={mode}
                 />
                 <ModalDialog.CloseButton variant="outline-brand">
-                  {intl.formatMessage(messages.streakButtonAA759)}
+                  Tiếp tục với khóa học
                 </ModalDialog.CloseButton>
               </>
             )}

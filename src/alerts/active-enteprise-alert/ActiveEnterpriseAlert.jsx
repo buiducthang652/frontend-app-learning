@@ -19,21 +19,13 @@ const ActiveEnterpriseAlert = ({ payload }) => {
         )}`
     }
     >
-      {intl.formatMessage(genericMessages.changeActiveEnterpriseLowercase)}
+      thay đổi doanh nghiệp hoạt động
     </Hyperlink>
   );
 
   return (
     <Alert variant="warning" icon={WarningFilled}>
-      {text}
-      <FormattedMessage
-        id="learning.activeEnterprise.alert"
-        description="Prompts the user to log-in with the correct enterprise to access the course content."
-        defaultMessage=" {changeActiveEnterprise}."
-        values={{
-          changeActiveEnterprise,
-        }}
-      />
+      {text} {changeActiveEnterprise}.
     </Alert>
   );
 };

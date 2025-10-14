@@ -56,7 +56,7 @@ const SidebarBase = ({
         >
           <Icon src={ArrowBackIos} />
           <span className="font-weight-bold m-2 d-inline-block">
-            {intl.formatMessage(messages.responsiveCloseNotificationTray)}
+            Đóng
           </span>
         </div>
       ) : null}
@@ -74,7 +74,7 @@ const SidebarBase = ({
                     iconAs={Icon}
                     onClick={() => toggleSidebar(null)}
                     variant="primary"
-                    alt={intl.formatMessage(messages.closeNotificationTrigger)}
+                    alt="Đóng thanh bên"
                   />
                 </div>
               )}

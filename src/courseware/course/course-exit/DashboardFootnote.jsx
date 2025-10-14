@@ -27,21 +27,14 @@ const DashboardFootnote = ({ variant }) => {
       className="text-reset"
       onClick={() => logClick(org, courseId, administrator, 'dashboard_footnote', { variant })}
     >
-      {intl.formatMessage(messages.dashboardLink)}
+      Bảng điều khiển
     </Hyperlink>
   );
 
   return (
     <Footnote
       icon={faCalendarAlt}
-      text={(
-        <FormattedMessage
-          id="courseCelebration.dashboardInfo" // for historical reasons
-          defaultMessage="You can access this course and its materials on your {dashboardLink}."
-          description="Text that precedes link to learner's dashboard"
-          values={{ dashboardLink }}
-        />
-      )}
+      text={`Bạn có thể truy cập khóa học này và tài liệu của nó trên ${dashboardLink} của mình.`}
     />
   );
 };

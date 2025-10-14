@@ -6,7 +6,7 @@ const CoursewareSearchEmpty = () => {
   const intl = useIntl();
   return (
     <div className="courseware-search-results">
-      <p className="courseware-search-results__empty" data-testid="no-results">{intl.formatMessage(messages.searchResultsNone)}</p>
+      <p className="courseware-search-results__empty" data-testid="no-results">Không tìm thấy kết quả.</p>
     </div>
   );
 };

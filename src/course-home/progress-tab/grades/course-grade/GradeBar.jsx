@@ -28,7 +28,7 @@ const GradeBar = ({ passingGrade }) => {
 
   return (
     <div className="col-12 col-sm-6 align-self-center p-0">
-      <div className="sr-only">{intl.formatMessage(messages.courseGradeBarAltText, { currentGrade, passingGrade })}</div>
+      <div className="sr-only">Điểm hiện tại của bạn là {currentGrade}%. Để đỗ khóa học này, bạn cần đạt {passingGrade}%.</div>
       <svg width="100%" height="100px" className="grade-bar" aria-hidden="true">
         <g style={{ transform: 'translateY(2.61em)' }}>
           <rect className="grade-bar__base" width="100%" />

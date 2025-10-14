@@ -31,7 +31,7 @@ const UnitTitleSlot = ({
         </div>
         {isEnabledOutlineSidebar && renderUnitNavigation(true)}
       </div>
-      <p className="sr-only">{formatMessage(messages.headerPlaceholder)}</p>
+      <p className="sr-only">Các tiêu đề cấp 2 có thể được tạo bởi nhà cung cấp khóa học trong tương lai.</p>
       <BookmarkButton
         unitId={unit.id}
         isBookmarked={unit.bookmarked}

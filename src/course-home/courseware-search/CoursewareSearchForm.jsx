@@ -19,8 +19,8 @@ const CoursewareSearchForm = ({
       submitButtonLocation="external"
       className="courseware-search-form"
       screenReaderText={{
-        label: formatMessage(messages.searchSubmitLabel),
-        clearButton: formatMessage(messages.searchClearAction),
+        label: 'Tìm kiếm',
+        clearButton: 'Xóa tìm kiếm',
         submitButton: null, // Remove the sr-only label in the button.
       }}
     >
@@ -30,7 +30,7 @@ const CoursewareSearchForm = ({
         <SearchField.ClearButton />
       </div>
       <SearchField.SubmitButton
-        buttonText={formatMessage(messages.searchSubmitLabel)}
+        buttonText="Tìm kiếm"
         submitButtonLocation="external"
         data-testid="courseware-search-form-submit"
       />
